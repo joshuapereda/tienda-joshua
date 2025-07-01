@@ -1,2203 +1,1778 @@
- @component('components.master')
-     @slot('content')
-         <!-- loader starts-->
-         <div class="loader-wrapper">
-             <div class="loader-index"> <span></span></div>
-             <svg>
-                 <defs></defs>
-                 <filter id="goo">
-                     <fegaussianblur in="SourceGraphic" stddeviation="11" result="blur"></fegaussianblur>
-                     <fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo">
-                     </fecolormatrix>
-                 </filter>
-             </svg>
-         </div>
-         <!-- loader ends-->
-         <!-- tap on top starts-->
-         <div class="tap-top"><i data-feather="chevrons-up"></i></div>
-         <!-- tap on tap ends-->
-         <!-- page-wrapper Start-->
-         <div class="page-wrapper compact-wrapper" id="pageWrapper">
-             <!-- Page Header Start-->
-             <div class="page-header">
-                 <div class="header-wrapper row m-0">
-                     <form class="form-inline search-full col" action="#" method="get">
-                         <div class="form-group w-100">
-                             <div class="Typeahead Typeahead--twitterUsers">
-                                 <div class="u-posRelative">
-                                     <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
-                                         placeholder="Search Anything Here..." name="q" title="" autofocus>
-                                     <div class="spinner-border Typeahead-spinner" role="status"><span
-                                             class="sr-only">Loading...</span></div><i class="close-search"
-                                         data-feather="x"></i>
-                                 </div>
-                                 <div class="Typeahead-menu"></div>
-                             </div>
-                         </div>
-                     </form>
-                     <div class="header-logo-wrapper col-auto p-0">
-                         <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light"
-                                     src="../assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark"
-                                     src="../assets/images/logo/logo_dark.png" alt=""></a></div>
-                         <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle"
-                                 data-feather="align-center"></i></div>
-                     </div>
-                     <div class="left-header col-xxl-5 col-xl-6 col-lg-5 col-md-4 col-sm-3 p-0">
-                         <div class="notification-slider">
-                             <div class="d-flex h-100"> <img src="../assets/images/giftools.gif" alt="gif">
-                                 <h6 class="mb-0 f-w-400"><span class="font-primary">Don't Miss Out! </span><span
-                                         class="f-light"> Our new update has been released.</span></h6><i
-                                     class="icon-arrow-top-right f-light"></i>
-                             </div>
-                             <div class="d-flex h-100"><img src="../assets/images/giftools.gif" alt="gif">
-                                 <h6 class="mb-0 f-w-400"><span class="f-light">Something you love is now on sale! </span></h6>
-                                 <a class="ms-1" href="https://1.envato.market/3GVzd" target="_blank">Buy now !</a>
-                             </div>
-                         </div>
-                     </div>
-                     <div class="nav-right col-xxl-7 col-xl-6 col-md-7 col-8 pull-right right-header p-0 ms-auto">
-                         <ul class="nav-menus">
-                             <li class="language-nav">
-                                 <div class="translate_wrapper">
-                                     <div class="current_lang">
-                                         <div class="lang"><i class="flag-icon flag-icon-us"></i><span class="lang-txt">EN
-                                             </span></div>
-                                     </div>
-                                     <div class="more_lang">
-                                         <div class="lang selected" data-value="en"><i class="flag-icon flag-icon-us"></i><span
-                                                 class="lang-txt">English<span> (US)</span></span></div>
-                                         <div class="lang" data-value="de"><i class="flag-icon flag-icon-de"></i><span
-                                                 class="lang-txt">Deutsch</span></div>
-                                         <div class="lang" data-value="es"><i class="flag-icon flag-icon-es"></i><span
-                                                 class="lang-txt">Español</span></div>
-                                         <div class="lang" data-value="fr"><i class="flag-icon flag-icon-fr"></i><span
-                                                 class="lang-txt">Français</span></div>
-                                         <div class="lang" data-value="pt"><i class="flag-icon flag-icon-pt"></i><span
-                                                 class="lang-txt">Português<span> (BR)</span></span></div>
-                                         <div class="lang" data-value="cn"><i class="flag-icon flag-icon-cn"></i><span
-                                                 class="lang-txt">简体中文</span></div>
-                                         <div class="lang" data-value="ae"><i class="flag-icon flag-icon-ae"></i><span
-                                                 class="lang-txt">لعربية <span> (ae)</span></span></div>
-                                     </div>
-                                 </div>
-                             </li>
-                             <li class="fullscreen-body"> <span>
-                                     <svg id="maximize-screen">
-                                         <use href="../assets/svg/icon-sprite.svg#full-screen"></use>
-                                     </svg></span></li>
-                             <li> <span class="header-search">
-                                     <svg>
-                                         <use href="../assets/svg/icon-sprite.svg#search"></use>
-                                     </svg></span></li>
-                             <li class="onhover-dropdown">
-                                 <svg>
-                                     <use href="../assets/svg/icon-sprite.svg#star"></use>
-                                 </svg>
-                                 <div class="onhover-show-div bookmark-flip">
-                                     <div class="flip-card">
-                                         <div class="flip-card-inner">
-                                             <div class="front">
-                                                 <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
-                                                 <ul class="bookmark-dropdown">
-                                                     <li>
-                                                         <div class="row">
-                                                             <div class="col-4 text-center">
-                                                                 <div class="bookmark-content">
-                                                                     <div class="bookmark-icon"><i
-                                                                             data-feather="file-text"></i></div>
-                                                                     <span>Forms</span>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="col-4 text-center">
-                                                                 <div class="bookmark-content">
-                                                                     <div class="bookmark-icon"><i data-feather="user"></i>
-                                                                     </div><span>Profile</span>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="col-4 text-center">
-                                                                 <div class="bookmark-content">
-                                                                     <div class="bookmark-icon"><i data-feather="server"></i>
-                                                                     </div><span>Tables</span>
-                                                                 </div>
-                                                             </div>
-                                                         </div>
-                                                     </li>
-                                                     <li class="text-center"><a class="flip-btn f-w-700 btn btn-primary w-100"
-                                                             id="flip-btn" href="#!">Add Bookmark</a></li>
-                                                 </ul>
-                                             </div>
-                                             <div class="back">
-                                                 <ul>
-                                                     <li>
-                                                         <div class="bookmark-dropdown flip-back-content">
-                                                             <input type="text" placeholder="Search...">
-                                                         </div>
-                                                     </li>
-                                                     <li><a class="f-w-700 d-block flip-back btn btn-primary w-100"
-                                                             id="flip-back" href="#!">Back</a></li>
-                                                 </ul>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </li>
-                             <li>
-                                 <div class="mode">
-                                     <svg>
-                                         <use href="../assets/svg/icon-sprite.svg#moon"></use>
-                                     </svg>
-                                 </div>
-                             </li>
-                             <li class="cart-nav onhover-dropdown">
-                                 <div class="cart-box">
-                                     <svg>
-                                         <use href="../assets/svg/icon-sprite.svg#stroke-ecommerce"></use>
-                                     </svg><span class="badge rounded-pill badge-danger">2</span>
-                                 </div>
-                                 <div class="cart-dropdown onhover-show-div">
-                                     <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
-                                     <ul>
-                                         <li>
-                                             <div class="d-flex"><img class="img-fluid b-r-5 me-3 img-60"
-                                                     src="../assets/images/other-images/cart-img.jpg" alt="">
-                                                 <div class="flex-grow-1"><span>Furniture Chair for Home</span>
-                                                     <div class="qty-box">
-                                                         <div class="input-group"><span class="input-group-prepend">
-                                                                 <button class="btn quantity-left-minus" type="button"
-                                                                     data-type="minus" data-field="">-</button></span>
-                                                             <input class="form-control input-number" type="text"
-                                                                 name="quantity" value="1"><span
-                                                                 class="input-group-prepend">
-                                                                 <button class="btn quantity-right-plus" type="button"
-                                                                     data-type="plus" data-field="">+</button></span>
-                                                         </div>
-                                                     </div>
-                                                     <h6 class="font-primary">$12.45</h6>
-                                                 </div>
-                                                 <div class="close-circle"><a class="bg-danger" href="#"><i
-                                                             data-feather="x"></i></a></div>
-                                             </div>
-                                         </li>
-                                         <li>
-                                             <div class="d-flex"><img class="img-fluid b-r-5 me-3 img-60"
-                                                     src="../assets/images/other-images/cart-img1.jpg" alt="">
-                                                 <div class="flex-grow-1"><span>Rest Well Chair</span>
-                                                     <div class="qty-box">
-                                                         <div class="input-group"><span class="input-group-prepend">
-                                                                 <button class="btn quantity-left-minus" type="button"
-                                                                     data-type="minus" data-field="">-</button></span>
-                                                             <input class="form-control input-number" type="text"
-                                                                 name="quantity" value="1"><span
-                                                                 class="input-group-prepend">
-                                                                 <button class="btn quantity-right-plus" type="button"
-                                                                     data-type="plus" data-field="">+</button></span>
-                                                         </div>
-                                                     </div>
-                                                     <h6 class="font-primary">$49.00</h6>
-                                                 </div>
-                                                 <div class="close-circle"><a class="bg-danger" href="#"><i
-                                                             data-feather="x"></i></a></div>
-                                             </div>
-                                         </li>
-                                         <li class="total">
-                                             <h6 class="mb-0">Order Total : <span class="f-right">$1000.00</span></h6>
-                                         </li>
-                                         <li class="text-center"><a class="d-block view-cart f-w-700 btn btn-primary w-100"
-                                                 href="cart.html">View Cart</a><a
-                                                 class="btn btn-primary view-checkout btn btn-primary w-100 f-w-700"
-                                                 href="checkout.html">Checkout</a></li>
-                                     </ul>
-                                 </div>
-                             </li>
-                             <li class="onhover-dropdown">
-                                 <div class="notification-box">
-                                     <svg>
-                                         <use href="../assets/svg/icon-sprite.svg#notification"></use>
-                                     </svg><span class="badge rounded-pill badge-success">4 </span>
-                                 </div>
-                                 <div class="onhover-show-div notification-dropdown">
-                                     <h6 class="f-18 mb-0 dropdown-title">Notifications </h6>
-                                     <ul>
-                                         <li class="b-l-primary border-4 toast default-show-toast align-items-center text-light border-0 fade show"
-                                             aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                                             <div class="d-flex justify-content-between">
-                                                 <div class="toast-body">
-                                                     <p>Delivery processing</p>
-                                                 </div>
-                                                 <button class="btn-close btn-close-white me-2 m-auto" type="button"
-                                                     data-bs-dismiss="toast" aria-label="Close"></button>
-                                             </div>
-                                         </li>
-                                         <li class="b-l-success border-4 toast default-show-toast align-items-center text-light border-0 fade show"
-                                             aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                                             <div class="d-flex justify-content-between">
-                                                 <div class="toast-body">
-                                                     <p>Order Complete</p>
-                                                 </div>
-                                                 <button class="btn-close btn-close-white me-2 m-auto" type="button"
-                                                     data-bs-dismiss="toast" aria-label="Close"></button>
-                                             </div>
-                                         </li>
-                                         <li class="b-l-secondary border-4 toast default-show-toast align-items-center text-light border-0 fade show"
-                                             aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                                             <div class="d-flex justify-content-between">
-                                                 <div class="toast-body">
-                                                     <p>Tickets Generated</p>
-                                                 </div>
-                                                 <button class="btn-close btn-close-white me-2 m-auto" type="button"
-                                                     data-bs-dismiss="toast" aria-label="Close"></button>
-                                             </div>
-                                         </li>
-                                         <li class="b-l-warning border-4 toast default-show-toast align-items-center text-light border-0 fade show"
-                                             aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
-                                             <div class="d-flex justify-content-between">
-                                                 <div class="toast-body">
-                                                     <p>Delivery Complete</p>
-                                                 </div>
-                                                 <button class="btn-close btn-close-white me-2 m-auto" type="button"
-                                                     data-bs-dismiss="toast" aria-label="Close"></button>
-                                             </div>
-                                         </li>
-                                     </ul>
-                                 </div>
-                             </li>
-                             <li class="profile-nav onhover-dropdown pe-0 py-0">
-                                 <div class="d-flex profile-media"><img class="b-r-10"
-                                         src="../assets/images/dashboard/profile.png" alt="">
-                                     <div class="flex-grow-1"><span>Emay Walter</span>
-                                         <p class="mb-0">Admin <i class="middle fa-solid fa-angle-down"></i></p>
-                                     </div>
-                                 </div>
-                                 <ul class="profile-dropdown onhover-show-div">
-                                     <li><a href="sign-up.html"><i data-feather="user"></i><span>Account </span></a></li>
-                                     <li><a href="mail-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
-                                     <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
-                                     <li><a href="add-user.html"><i data-feather="settings"></i><span>Settings</span></a></li>
-                                     <li><a href="login.html"><i data-feather="log-in"> </i><span>Log out</span></a></li>
-                                 </ul>
-                             </li>
-                         </ul>
-                     </div>
-                     <script class="result-template" type="text/x-handlebars-template">
-            <div class="ProfileCard u-cf">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cuba admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords" content="admin template, Cuba admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="{{asset('/assets/images/favicon.png')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('/assets/images/favicon.png')}}" type="image/x-icon">
+    <title>Default Dashboard | Cuba - Premium Admin Template By Pixelstrap</title>
+    <!-- Google font-->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
+    <!-- Font Awesome-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/fontawesome.css')}}">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/icofont.css')}}">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/themify.css')}}">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/flag-icon.css')}}">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/feather-icon.css')}}">
+    <!-- Plugins css start-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/slick.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/slick-theme.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/scrollbar.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/animate.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/jquery.dataTables.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/select.bootstrap5.css')}}">
+    <!-- Plugins css Ends-->
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/vendors/bootstrap.css')}}">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/style.css')}}">
+    <link id="color" rel="stylesheet" href="{{asset('/assets/css/color-1.css" media="screen')}}">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="{{asset('/assets/css/responsive.css')}}">
+  </head>
+  <body onload="startTime()"> 
+    <!-- loader starts-->
+    <div class="loader-wrapper">
+      <div class="loader-index"> <span></span></div>
+      <svg>
+        <defs></defs>
+        <filter id="goo">
+          <fegaussianblur in="SourceGraphic" stddeviation="11" result="blur"></fegaussianblur>
+          <fecolormatrix in="blur" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo"> </fecolormatrix>
+        </filter>
+      </svg>
+    </div>
+    <!-- loader ends-->
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+      <!-- Page Header Start-->
+      <div class="page-header">
+        <div class="header-wrapper row m-0">
+          <form class="form-inline search-full col" action="index.html#" method="get">
+            <div class="form-group w-100">
+              <div class="Typeahead Typeahead--twitterUsers">
+                <div class="u-posRelative">
+                  <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text" placeholder="Search Anything Here..." name="q" title="" autofocus>
+                  <div class="spinner-border Typeahead-spinner" role="status"><span class="sr-only">Loading...</span></div><i class="close-search" data-feather="x"></i>
+                </div>
+                <div class="Typeahead-menu"></div>
+              </div>
+            </div>
+          </form>
+          <div class="header-logo-wrapper col-auto p-0">
+            <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt=""></a></div>
+            <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="align-center"></i></div>
+          </div>
+          <div class="left-header col-xxl-5 col-xl-6 col-lg-5 col-md-4 col-sm-3 p-0">
+            <div class="notification-slider">
+              <div class="d-flex h-100"> <img src="../assets/images/giftools.gif" alt="gif">
+                <h6 class="mb-0 f-w-400"><span class="font-primary">Don't Miss Out! </span><span class="f-light"> Our new update has been released.</span></h6><i class="icon-arrow-top-right f-light"></i>
+              </div>
+              <div class="d-flex h-100"><img src="../assets/images/giftools.gif" alt="gif">
+                <h6 class="mb-0 f-w-400"><span class="f-light">Something you love is now on sale! </span></h6><a class="ms-1" href="https://1.envato.market/3GVzd" target="_blank">Buy now !</a>
+              </div>
+            </div>
+          </div>
+          <div class="nav-right col-xxl-7 col-xl-6 col-md-7 col-8 pull-right right-header p-0 ms-auto">
+            <ul class="nav-menus">
+              <li class="language-nav">
+                <div class="translate_wrapper">
+                  <div class="current_lang">
+                    <div class="lang"><i class="flag-icon flag-icon-us"></i><span class="lang-txt">EN                               </span></div>
+                  </div>
+                  <div class="more_lang">
+                    <div class="lang selected" data-value="en"><i class="flag-icon flag-icon-us"></i><span class="lang-txt">English<span> (US)</span></span></div>
+                    <div class="lang" data-value="de"><i class="flag-icon flag-icon-de"></i><span class="lang-txt">Deutsch</span></div>
+                    <div class="lang" data-value="es"><i class="flag-icon flag-icon-es"></i><span class="lang-txt">Español</span></div>
+                    <div class="lang" data-value="fr"><i class="flag-icon flag-icon-fr"></i><span class="lang-txt">Français</span></div>
+                    <div class="lang" data-value="pt"><i class="flag-icon flag-icon-pt"></i><span class="lang-txt">Português<span> (BR)</span></span></div>
+                    <div class="lang" data-value="cn"><i class="flag-icon flag-icon-cn"></i><span class="lang-txt">简体中文</span></div>
+                    <div class="lang" data-value="ae"><i class="flag-icon flag-icon-ae"></i><span class="lang-txt">لعربية <span> (ae)</span></span></div>
+                  </div>
+                </div>
+              </li>
+              <li class="fullscreen-body">                       <span>
+                  <svg id="maximize-screen">
+                    <use href="{{asset('/assets/svg/icon-sprite.svg#full-screen')}}"></use>
+                  </svg></span></li>
+              <li>                         <span class="header-search">
+                  <svg>
+                    <use href="{{asset('/assets/svg/icon-sprite.svg#search')}}"></use>
+                  </svg></span></li>
+              <li class="onhover-dropdown">
+                <svg>
+                  <use href="{{asset('/assets/svg/icon-sprite.svg#star')}}"></use>
+                </svg>
+                <div class="onhover-show-div bookmark-flip">
+                  <div class="flip-card">
+                    <div class="flip-card-inner">
+                      <div class="front">
+                        <h6 class="f-18 mb-0 dropdown-title">Bookmark</h6>
+                        <ul class="bookmark-dropdown">
+                          <li>
+                            <div class="row">
+                              <div class="col-4 text-center">
+                                <div class="bookmark-content">
+                                  <div class="bookmark-icon"><i data-feather="file-text"></i></div><span>Forms</span>
+                                </div>
+                              </div>
+                              <div class="col-4 text-center">
+                                <div class="bookmark-content">
+                                  <div class="bookmark-icon"><i data-feather="user"></i></div><span>Profile</span>
+                                </div>
+                              </div>
+                              <div class="col-4 text-center">
+                                <div class="bookmark-content">
+                                  <div class="bookmark-icon"><i data-feather="server"></i></div><span>Tables</span>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                          <li class="text-center"><a class="flip-btn f-w-700 btn btn-primary w-100" id="flip-btn" href="index.html#!">Add Bookmark</a></li>
+                        </ul>
+                      </div>
+                      <div class="back">
+                        <ul>
+                          <li>
+                            <div class="bookmark-dropdown flip-back-content">
+                              <input type="text" placeholder="Search...">
+                            </div>
+                          </li>
+                          <li><a class="f-w-700 d-block flip-back btn btn-primary w-100" id="flip-back" href="index.html#!">Back</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="mode">
+                  <svg>
+                    <use href="{{asset('/assets/svg/icon-sprite.svg#moon')}}"></use>
+                  </svg>
+                </div>
+              </li>
+              <li class="cart-nav onhover-dropdown">
+                <div class="cart-box">
+                  <svg>
+                    <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-ecommerce')}}"></use>
+                  </svg><span class="badge rounded-pill badge-danger">2</span>
+                </div>
+                <div class="cart-dropdown onhover-show-div">
+                  <h6 class="f-18 mb-0 dropdown-title">Cart</h6>
+                  <ul>
+                    <li>
+                      <div class="d-flex"><img class="img-fluid b-r-5 me-3 img-60" src="../assets/images/other-images/cart-img.jpg" alt="">
+                        <div class="flex-grow-1"><span>Furniture Chair for Home</span>
+                          <div class="qty-box">
+                            <div class="input-group"><span class="input-group-prepend">
+                                <button class="btn quantity-left-minus" type="button" data-type="minus" data-field="">-</button></span>
+                              <input class="form-control input-number" type="text" name="quantity" value="1"><span class="input-group-prepend">
+                                <button class="btn quantity-right-plus" type="button" data-type="plus" data-field="">+</button></span>
+                            </div>
+                          </div>
+                          <h6 class="font-primary">$12.45</h6>
+                        </div>
+                        <div class="close-circle"><a class="bg-danger" href="index.html#"><i data-feather="x"></i></a></div>
+                      </div>
+                    </li>
+                    <li>
+                      <div class="d-flex"><img class="img-fluid b-r-5 me-3 img-60" src="../assets/images/other-images/cart-img1.jpg" alt="">
+                        <div class="flex-grow-1"><span>Rest Well Chair</span>
+                          <div class="qty-box">
+                            <div class="input-group"><span class="input-group-prepend">
+                                <button class="btn quantity-left-minus" type="button" data-type="minus" data-field="">-</button></span>
+                              <input class="form-control input-number" type="text" name="quantity" value="1"><span class="input-group-prepend">
+                                <button class="btn quantity-right-plus" type="button" data-type="plus" data-field="">+</button></span>
+                            </div>
+                          </div>
+                          <h6 class="font-primary">$49.00</h6>
+                        </div>
+                        <div class="close-circle"><a class="bg-danger" href="index.html#"><i data-feather="x"></i></a></div>
+                      </div>
+                    </li>
+                    <li class="total">
+                      <h6 class="mb-0">Order Total : <span class="f-right">$1000.00</span></h6>
+                    </li>
+                    <li class="text-center"><a class="d-block view-cart f-w-700 btn btn-primary w-100" href="cart.html">View Cart</a><a class="btn btn-primary view-checkout btn btn-primary w-100 f-w-700" href="checkout.html">Checkout</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li class="onhover-dropdown">
+                <div class="notification-box">
+                  <svg>
+                    <use href="{{asset('/assets/svg/icon-sprite.svg#notification')}}"> </use>
+                  </svg><span class="badge rounded-pill badge-success">4 </span>
+                </div>
+                <div class="onhover-show-div notification-dropdown">
+                  <h6 class="f-18 mb-0 dropdown-title">Notifications                               </h6>
+                  <ul>
+                    <li class="b-l-primary border-4 toast default-show-toast align-items-center text-light border-0 fade show" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                      <div class="d-flex justify-content-between">
+                        <div class="toast-body">
+                          <p>Delivery processing</p>
+                        </div>
+                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </li>
+                    <li class="b-l-success border-4 toast default-show-toast align-items-center text-light border-0 fade show" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                      <div class="d-flex justify-content-between">
+                        <div class="toast-body">
+                          <p>Order Complete</p>
+                        </div>
+                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </li>
+                    <li class="b-l-secondary border-4 toast default-show-toast align-items-center text-light border-0 fade show" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                      <div class="d-flex justify-content-between">
+                        <div class="toast-body">
+                          <p>Tickets Generated</p>
+                        </div>
+                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </li>
+                    <li class="b-l-warning border-4 toast default-show-toast align-items-center text-light border-0 fade show" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+                      <div class="d-flex justify-content-between">
+                        <div class="toast-body">
+                          <p>Delivery Complete</p>
+                        </div>
+                        <button class="btn-close btn-close-white me-2 m-auto" type="button" data-bs-dismiss="toast" aria-label="Close"></button>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <li class="profile-nav onhover-dropdown pe-0 py-0">
+                <div class="d-flex profile-media"><img class="b-r-10" src="../assets/images/dashboard/profile.png" alt="">
+                  <div class="flex-grow-1"><span>Emay Walter</span>
+                    <p class="mb-0">Admin <i class="middle fa-solid fa-angle-down"></i></p>
+                  </div>
+                </div>
+                <ul class="profile-dropdown onhover-show-div">
+                  <li><a href="sign-up.html"><i data-feather="user"></i><span>Account </span></a></li>
+                  <li><a href="mail-box.html"><i data-feather="mail"></i><span>Inbox</span></a></li>
+                  <li><a href="task.html"><i data-feather="file-text"></i><span>Taskboard</span></a></li>
+                  <li><a href="add-user.html"><i data-feather="settings"></i><span>Settings</span></a></li>
+                  <li><a href="login.html"><i data-feather="log-in"> </i><span>Log out</span></a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <script class="result-template" type="text/x-handlebars-template">
+            <div class="ProfileCard u-cf">                        
             <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
             <div class="ProfileCard-details">
-            <div class="ProfileCard-realName"></div>
+            <div class="ProfileCard-realName">rddfdf</div>
             </div>
             </div>
           </script>
-                     <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
-                 </div>
-             </div>
-             <!-- Page Header Ends                              -->
-             <!-- Page Body Start-->
-             <div class="page-body-wrapper">
-                 <!-- Page Sidebar Start-->
-                 <div class="sidebar-wrapper" data-sidebar-layout="stroke-svg">
-                     <div>
-                         <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light"
-                                     src="../assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark"
-                                     src="../assets/images/logo/logo_dark.png" alt=""></a>
-                             <div class="back-btn"><i class="fa-solid fa-angle-left"></i></div>
-                             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid">
-                                 </i></div>
-                         </div>
-                         <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid"
-                                     src="../assets/images/logo/logo-icon.png" alt=""></a></div>
-                         <x-base.nav />
-                     </div>
-                 </div>
-                 <!-- Page Sidebar Ends-->
-                 <div class="page-body">
-                     <div class="container-fluid">
-                         <div class="page-title">
-                             <div class="row">
-                                 <div class="col-sm-6">
-                                     <h3>Mail Box</h3>
-                                 </div>
-                                 <div class="col-sm-6">
-                                     <ol class="breadcrumb">
-                                         <li class="breadcrumb-item"><a href="index.html">
-                                                 <svg class="stroke-icon">
-                                                     <use href="../assets/svg/icon-sprite.svg#stroke-home"></use>
-                                                 </svg></a></li>
-                                         <li class="breadcrumb-item">Email</li>
-                                         <li class="breadcrumb-item active"> Mail Box</li>
-                                     </ol>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                     <!-- Container-fluid starts-->
-                     <div class="container-fluid">
-                         <div class="email-wrap email-main-wrapper">
-                             <div class="row">
-                                 <div class="col-xxl-3 col-xl-4 box-col-12">
-                                     <div class="md-sidebar"> <a class="btn btn-primary md-sidebar-toggle"
-                                             href="#!">email filter</a>
-                                         <div class="md-sidebar-aside job-left-aside custom-scrollbar">
-                                             <div class="email-left-aside">
-                                                 <div class="card">
-                                                     <div class="card-body">
-                                                         <div class="email-app-sidebar">
-                                                             <button class="btn btn-primary emailbox" type="button"
-                                                                 data-bs-toggle="modal" data-bs-target="#compose_mail"><i
-                                                                     class="fa-solid fa-plus"></i>Compose Email</button>
-                                                             <ul class="nav nav-pills main-menu email-category"
-                                                                 id="email-pills-tab" role="tablist">
-                                                                 <li class="nav-item"><a class="nav-link active"
-                                                                         id="inbox-pill-tab" data-bs-toggle="pill"
-                                                                         href="#inbox-pill" role="tab"
-                                                                         aria-controls="inbox-pill" aria-selected="false">
-                                                                         <svg class="stroke-icon">
-                                                                             <use href="../assets/svg/icon-sprite.svg#inbox">
-                                                                             </use>
-                                                                         </svg>
-                                                                         <div>Inbox<span
-                                                                                 class="badge badge-light-primary">35</span>
-                                                                         </div>
-                                                                     </a></li>
-                                                                 <li class="nav-item"><a class="nav-link" id="sent-pill-tab"
-                                                                         data-bs-toggle="pill" href="#sent-pill"
-                                                                         role="tab" aria-controls="sent-pill"
-                                                                         aria-selected="false">
-                                                                         <svg class="stroke-icon">
-                                                                             <use href="../assets/svg/icon-sprite.svg#sent">
-                                                                             </use>
-                                                                         </svg>Sent</a></li>
-                                                                 <li class="nav-item"><a class="nav-link"
-                                                                         id="starred-pill-tab" data-bs-toggle="pill"
-                                                                         href="#starred-pill" role="tab"
-                                                                         aria-controls="starred-pill" aria-selected="false">
-                                                                         <svg class="stroke-icon">
-                                                                             <use href="../assets/svg/icon-sprite.svg#star">
-                                                                             </use>
-                                                                         </svg>
-                                                                         <div>Starred<span
-                                                                                 class="badge badge-light-primary">6</span>
-                                                                         </div>
-                                                                     </a></li>
-                                                                 <li class="nav-item"><a class="nav-link" id="draft-pill-tab"
-                                                                         data-bs-toggle="pill" href="#draft-pill"
-                                                                         role="tab" aria-controls="draft-pill"
-                                                                         aria-selected="false">
-                                                                         <svg class="stroke-icon">
-                                                                             <use href="../assets/svg/icon-sprite.svg#draft">
-                                                                             </use>
-                                                                         </svg>
-                                                                         <div>Draft<span
-                                                                                 class="badge badge-light-primary">7</span>
-                                                                         </div>
-                                                                     </a></li>
-                                                                 <li class="nav-item"><a class="nav-link" id="trash-pill-tab"
-                                                                         data-bs-toggle="pill" href="#trash-pill"
-                                                                         role="tab" aria-controls="trash-pill"
-                                                                         aria-selected="false">
-                                                                         <svg class="stroke-icon">
-                                                                             <use href="../assets/svg/icon-sprite.svg#trash">
-                                                                             </use>
-                                                                         </svg>Trash</a></li>
-                                                                 <li class="nav-item">
-                                                                     <ul>
-                                                                         <li><a href="#!">
-                                                                                 <svg class="stroke-icon stroke-primary">
-                                                                                     <use
-                                                                                         href="../assets/svg/icon-sprite.svg#pintag">
-                                                                                     </use>
-                                                                                 </svg>Work</a></li>
-                                                                         <li><a href="#!">
-                                                                                 <svg class="stroke-icon stroke-warning">
-                                                                                     <use
-                                                                                         href="../assets/svg/icon-sprite.svg#pintag">
-                                                                                     </use>
-                                                                                 </svg>Private</a></li>
-                                                                         <li><a href="#!">
-                                                                                 <svg class="stroke-icon stroke-success">
-                                                                                     <use
-                                                                                         href="../assets/svg/icon-sprite.svg#pintag">
-                                                                                     </use>
-                                                                                 </svg>Support</a></li>
-                                                                     </ul>
-                                                                 </li>
-                                                                 <li class="nav-item"><a class="nav-link btn"
-                                                                         data-bs-toggle="modal" data-bs-target="#label-pill"
-                                                                         href="#!"><i class="fa-solid fa-plus"></i>Add
-                                                                         Label</a></li>
-                                                             </ul>
-                                                         </div>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                                 <div class="col-xxl-9 col-xl-8 box-col-12">
-                                     <div class="email-right-aside">
-                                         <div class="card email-body email-list">
-                                             <div class="mail-header-wrapper">
-                                                 <div class="mail-header">
-                                                     <div class="form-check form-check-inline">
-                                                         <input class="form-check-input checkbox-primary" id="emailCheckboxA"
-                                                             type="checkbox" value="option1">
-                                                         <ul class="mail-filters">
-                                                             <li class="common-align mail-header-option active"
-                                                                 data-filter="important">
-                                                                 <svg class="stroke-icon">
-                                                                     <use href="../assets/svg/icon-sprite.svg#mail"></use>
-                                                                 </svg><span>Important</span>
-                                                             </li>
-                                                             <li class="common-align mail-header-option" data-filter="social">
-                                                                 <svg class="stroke-icon">
-                                                                     <use href="../assets/svg/icon-sprite.svg#goal"></use>
-                                                                 </svg><span>Social</span>
-                                                             </li>
-                                                             <li class="common-align mail-header-option"
-                                                                 data-filter="promotion">
-                                                                 <svg class="stroke-icon">
-                                                                     <use href="../assets/svg/icon-sprite.svg#tread"></use>
-                                                                 </svg><span>Promotion</span>
-                                                             </li>
-                                                         </ul>
-                                                     </div>
-                                                 </div>
-                                                 <div class="mail-body">
-                                                     <div class="mail-search d-flex-align-items-center">
-                                                         <input class="form-control" type="search"
-                                                             placeholder="Search..."><i
-                                                             class="fa-solid fa-magnifying-glass"></i>
-                                                     </div>
-                                                     <div class="light-square block-btn-1"
-                                                         onclick="clickedthisBtn(event);function clickedthisBtn(e){let i = e.target.closest('div').querySelector('i'); i.classList.add('fa-spin');setTimeout(() =&gt; {                                            i.classList.remove('fa-spin')                                            }, 1000);}">
-                                                         <i class="fa-solid fa-arrows-rotate"></i></div>
-                                                     <div class="light-square bg-light-danger"> <i
-                                                             class="fa-solid fa-trash-can txt-danger"></i></div>
-                                                     <div class="light-square dropdown-toggle" role="main"
-                                                         data-bs-toggle="dropdown" aria-expanded="false"><i
-                                                             class="fa-solid fa-ellipsis-vertical"></i></div>
-                                                     <ul class="dropdown-menu dropdown-block dropdown-menu-end">
-                                                         <li> <a class="dropdown-item" href="#!">All</a></li>
-                                                         <li> <a class="dropdown-item" href="#!">None</a></li>
-                                                         <li> <a class="dropdown-item" href="#!">Read</a></li>
-                                                         <li> <a class="dropdown-item" href="#!">Unread</a></li>
-                                                         <li> <a class="dropdown-item" href="#!">Starred</a></li>
-                                                         <li> <a class="dropdown-item" href="#!">Unstarred</a></li>
-                                                     </ul>
-                                                 </div>
-                                             </div>
-                                             <div class="tab-content block-wrapper position-relative"
-                                                 id="email-pills-tabContent">
-                                                 <div class="tab-pane fade show active" id="inbox-pill" role="tabpanel"
-                                                     aria-labelledby="inbox-pill-tab">
-                                                     <div class="mail-body-wrapper">
-                                                         <ul class="mail-header-tabs" id="paginated-list"
-                                                             data-current-page="1" aria-live="polite">
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox1" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox1"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/1.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Marvin McKinney</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Our meeting scheduled for
-                                                                             tomorrow at 3 PM - <span>New Here's a list of all
-                                                                                 the topic challenges...</span></span>
-                                                                         <div class="badge badge-light-light">project.zip</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>2:30 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox2" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox2"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/4.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Brooklyn Simmons</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Control over user email
-                                                                             accounts -<span>Control and direction of all email
-                                                                                 operations in one place</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             account_details.txt</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7:50 AM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox3" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox3"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div>
-                                                                             <p class="txt-primary">EH</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Esther Howard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Confirm your booking id
-                                                                             -<span>Confirmation and information about your most
-                                                                                 recent reservation</span></span>
-                                                                         <div class="badge badge-light-light">task.doc</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox4" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox4"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">CW</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Cameron Williamson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Verification link -<span>To
-                                                                                 activate your account, confirm your
-                                                                                 email</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox5" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox5"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/12.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Ellison Dalton</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Notice of scheduled
-                                                                             maintenance -<span>From 2:00 AM to 4:00 AM on May
-                                                                                 24, 2024. There will be a system outage during
-                                                                                 this period</span></span>
-                                                                         <div class="badge badge-light-light">Maintenance.Zip
-                                                                         </div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox6" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox6"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/9.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Tristan Richmond</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Welcome to our new office
-                                                                             -<span>Experience the cosiness, creativity, and
-                                                                                 teamwork that await you in our brand-new
-                                                                                 workspace.</span></span></div>
-                                                                     <div class="email-timing"><span>1 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox7" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox7"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/5.png"
-                                                                             alt="user"></div>
-                                                                     <p>Kelvin Schneider</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#224820098</strong> has been
-                                                                             confirmed-<span>We are happy to notify you that
-                                                                                 your recent order (#224820098) has been
-                                                                                 verified!</span></span></div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox8" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox8"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/3.png"
-                                                                             alt="user"></div>
-                                                                     <p>Ronald Richards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Security notification:
-                                                                             strange activity found -<span>Reviewing your
-                                                                                 account activity and taking the necessary
-                                                                                 precautions to secure your data is urgently
-                                                                                 required</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox9" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox9"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">WT</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>William Turner</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>OTP verification link
-                                                                             -<span>For the security of your account, your
-                                                                                 one-time password (OTP) is crucial. To confirm
-                                                                                 and safeguard your information,
-                                                                                 click</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox10" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox10"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/1.png"
-                                                                             alt="user"></div>
-                                                                     <p>Jacob Jones</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Reminder for IT training
-                                                                             workshop -<span>You have a great opportunity to
-                                                                                 improve your IT abilities and keep current with
-                                                                                 emerging trends and technology by attending
-                                                                                 this workshop</span></span></div>
-                                                                     <div class="email-timing"><span>1 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox11" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox11"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/2.png"
-                                                                             alt="user"></div>
-                                                                     <p>Ralph Edwards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#5848000047</strong> has been
-                                                                             confirmed-<span>Prepare to enjoy the products you
-                                                                                 have chosen without any hassles</span></span>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox12" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox12"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/4.png"
-                                                                             alt="user"></div>
-                                                                     <p>Jacob Jones</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Reminder for IT training
-                                                                             workshop -<span>You have a great opportunity to
-                                                                                 improve your IT abilities and keep current with
-                                                                                 emerging trends and technology by attending
-                                                                                 this workshop</span></span></div>
-                                                                     <div class="email-timing"><span>1 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox13" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox13"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/2.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Ronald Richards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Security notification:
-                                                                             strange activity found -<span>Reviewing your
-                                                                                 account activity and taking the necessary
-                                                                                 precautions to secure your data is urgently
-                                                                                 required</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox14" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox14"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/3.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Lacey Travis</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#5848000047</strong> has been
-                                                                             confirmed-<span>Prepare to enjoy the products you
-                                                                                 have chosen without any hassles</span></span>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox15" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox15"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/8.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Darlene Robertson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Promotion Mail -<span>Find
-                                                                                 special offers & Exclusive offers! for a short
-                                                                                 time only!</span></span>
-                                                                         <div class="badge badge-light-light">Import File..
-                                                                         </div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>4 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox16" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox16"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">CW</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Cameron Williamson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Special Deal: Save 20% on
-                                                                             Your Next Purchase! -<span>Use the coupon code
-                                                                                 <strong>SAVE20</strong> at the register to get
-                                                                                 your savings.</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox17" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox17"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/11.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Mccoy Ballard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Security notification:
-                                                                             strange activity found -<span>Reviewing your
-                                                                                 account activity and taking the necessary
-                                                                                 precautions to secure your data is urgently
-                                                                                 required</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                         </ul>
-                                                     </div>
-                                                 </div>
-                                                 <div class="tab-pane fade" id="sent-pill" role="tabpanel"
-                                                     aria-labelledby="sent-pill-tab">
-                                                     <div class="mail-body-wrapper">
-                                                         <ul class="mail-header-tabs">
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox18" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox18"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">CW</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Cameron Williamson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Verification link -<span>To
-                                                                                 activate your account, confirm your
-                                                                                 email</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox19" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox19"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/3.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Lacey Travis</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#5848000047</strong> has been
-                                                                             confirmed-<span>Prepare to enjoy the products you
-                                                                                 have chosen without any hassles</span></span>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox20" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox20"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div>
-                                                                             <p class="txt-primary">EH</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Esther Howard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Confirm your booking id
-                                                                             -<span>Confirmation and information about your most
-                                                                                 recent reservation</span></span>
-                                                                         <div class="badge badge-light-light">task.doc</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox21" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox21"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/2.png"
-                                                                             alt="user"></div>
-                                                                     <p>Ralph Edwards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#5848000047</strong> has been
-                                                                             confirmed-<span>Prepare to enjoy the products you
-                                                                                 have chosen without any hassles</span></span>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox22" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox22"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">WT</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>William Turner</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>OTP verification link
-                                                                             -<span>For the security of your account, your
-                                                                                 one-time password (OTP) is crucial. To confirm
-                                                                                 and safeguard your information,
-                                                                                 click</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox23" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox23"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">CW</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Cameron Williamson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Special Deal: Save 20% on
-                                                                             Your Next Purchase! -<span>Use the coupon code
-                                                                                 <strong>SAVE20</strong> at the register to get
-                                                                                 your savings.</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i></div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox24" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox24"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/11.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Mccoy Ballard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Save 30% On The Entire
-                                                                             Spring Collection -<span>To take advantage of this
-                                                                                 exclusive offer, use the promo code
-                                                                                 <strong>SPRING30</strong> at
-                                                                                 checkout.</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox25" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox25"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/2.png"
-                                                                             alt="user"></div>
-                                                                     <p>Ralph Edwards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Exclusive Deal: Purchase
-                                                                             One, Get One Free<span>Purchase any item from our
-                                                                                 chosen collection and receive another item for
-                                                                                 free for a limited time.</span></span></div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                         </ul>
-                                                     </div>
-                                                 </div>
-                                                 <div class="tab-pane fade" id="starred-pill" role="tabpanel"
-                                                     aria-labelledby="starred-pill-tab">
-                                                     <div class="mail-body-wrapper">
-                                                         <ul class="mail-header-tabs">
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox26" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox26"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/2.png"
-                                                                             alt="user"></div>
-                                                                     <p>Ralph Edwards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#5848000047</strong> has been
-                                                                             confirmed-<span>Prepare to enjoy the products you
-                                                                                 have chosen without any hassles</span></span>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox27" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox27"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div>
-                                                                             <p class="txt-primary">EH</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Esther Howard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Confirm your booking id
-                                                                             -<span>Confirmation and information about your most
-                                                                                 recent reservation</span></span>
-                                                                         <div class="badge badge-light-light">task.doc</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox28" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox28"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/9.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Tristan Richmond</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Welcome to our new office
-                                                                             -<span>Experience the cosiness, creativity, and
-                                                                                 teamwork that await you in our brand-new
-                                                                                 workspace.</span></span></div>
-                                                                     <div class="email-timing"><span>1 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox29" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox29"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/11.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Mccoy Ballard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Security notification:
-                                                                             strange activity found -<span>Reviewing your
-                                                                                 account activity and taking the necessary
-                                                                                 precautions to secure your data is urgently
-                                                                                 required</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox30" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox30"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/12.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Ellison Dalton</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Notice of scheduled
-                                                                             maintenance -<span>From 2:00 AM to 4:00 AM on May
-                                                                                 24, 2024. There will be a system outage during
-                                                                                 this period</span></span>
-                                                                         <div class="badge badge-light-light">Maintenance.Zip
-                                                                         </div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox31" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox31"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">CW</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Cameron Williamson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Special Deal: Save 20% on
-                                                                             Your Next Purchase! -<span>Use the coupon code
-                                                                                 <strong>SAVE20</strong> at the register to get
-                                                                                 your savings.</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                         </ul>
-                                                     </div>
-                                                 </div>
-                                                 <div class="tab-pane fade" id="draft-pill" role="tabpanel"
-                                                     aria-labelledby="draft-pill-tab">
-                                                     <div class="mail-body-wrapper">
-                                                         <ul class="mail-header-tabs">
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox32" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox32"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/9.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Tristan Richmond</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Welcome to our new office
-                                                                             -<span>Experience the cosiness, creativity, and
-                                                                                 teamwork that await you in our brand-new
-                                                                                 workspace.</span></span></div>
-                                                                     <div class="email-timing"><span>1 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox33" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox33"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/12.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Ellison Dalton</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Notice of scheduled
-                                                                             maintenance -<span>From 2:00 AM to 4:00 AM on May
-                                                                                 24, 2024. There will be a system outage during
-                                                                                 this period</span></span>
-                                                                         <div class="badge badge-light-light">Maintenance.Zip
-                                                                         </div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox34" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox34"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">WT</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>William Turner</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>OTP verification link
-                                                                             -<span>For the security of your account, your
-                                                                                 one-time password (OTP) is crucial. To confirm
-                                                                                 and safeguard your information,
-                                                                                 click</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox35" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox35"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/2.png"
-                                                                             alt="user"></div>
-                                                                     <p>Ralph Edwards</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#5848000047</strong> has been
-                                                                             confirmed-<span>Prepare to enjoy the products you
-                                                                                 have chosen without any hassles</span></span>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox36" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox36"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div>
-                                                                             <p class="txt-primary">EH</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Esther Howard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Confirm your booking id
-                                                                             -<span>Confirmation and information about your most
-                                                                                 recent reservation</span></span>
-                                                                         <div class="badge badge-light-light">task.doc</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox37" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox37"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/11.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Mccoy Ballard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Save 30% On The Entire
-                                                                             Spring Collection -<span>To take advantage of this
-                                                                                 exclusive offer, use the promo code
-                                                                                 <strong>SPRING30</strong> at
-                                                                                 checkout.</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox38" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox38"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border">
-                                                                         <div class="circle-success">
-                                                                             <p class="txt-success">CW</p>
-                                                                         </div>
-                                                                     </div>
-                                                                     <p>Cameron Williamson</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Special Deal: Save 20% on
-                                                                             Your Next Purchase! -<span>Use the coupon code
-                                                                                 <strong>SAVE20</strong> at the register to get
-                                                                                 your savings.</span></span></div>
-                                                                     <div class="email-timing"><span>5 Day ago</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                         </ul>
-                                                     </div>
-                                                 </div>
-                                                 <div class="tab-pane fade" id="trash-pill" role="tabpanel"
-                                                     aria-labelledby="trash-pill-tab">
-                                                     <div class="mail-body-wrapper">
-                                                         <ul class="mail-header-tabs">
-                                                             <li class="inbox-data project" data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox39" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox39"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail active">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/1.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Marvin McKinney</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Our meeting scheduled for
-                                                                             tomorrow at 3 PM - <span>New Here's a list of all
-                                                                                 the topic challenges...</span></span>
-                                                                         <div class="badge badge-light-light">project.zip
-                                                                         </div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>2:30 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="important">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox40" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox40"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/1.png"
-                                                                             alt="user"></div>
-                                                                     <p>Jacob Jones</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Reminder for IT training
-                                                                             workshop -<span>You have a great opportunity to
-                                                                                 improve your IT abilities and keep current with
-                                                                                 emerging trends and technology by attending
-                                                                                 this workshop</span></span></div>
-                                                                     <div class="email-timing"><span>01 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project border-bottom-0"
-                                                                 data-filter="social">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox41" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox41"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-9/user/5.png"
-                                                                             alt="user"></div>
-                                                                     <p>Kelvin Schneider</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Your Order
-                                                                             <strong>#224820098</strong> has been
-                                                                             confirmed-<span>We are happy to notify you that
-                                                                                 your recent order (#224820098) has been
-                                                                                 verified!</span></span></div>
-                                                                     <div class="email-timing"><span>1:00 PM</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                             <li class="inbox-data project" data-filter="promotion">
-                                                                 <div class="inbox-user">
-                                                                     <div class="form-check form-check-inline m-0">
-                                                                         <input class="form-check-input checkbox-primary"
-                                                                             id="emailCheckbox42" type="checkbox"
-                                                                             value="option1">
-                                                                         <label class="form-check-label"
-                                                                             for="emailCheckbox42"></label>
-                                                                     </div>
-                                                                     <svg class="important-mail">
-                                                                         <use href="../assets/svg/icon-sprite.svg#fill-star">
-                                                                         </use>
-                                                                     </svg>
-                                                                     <div class="rounded-border"><img class="img-fluid"
-                                                                             src="../assets/images/dashboard-11/user/11.jpg"
-                                                                             alt="user"></div>
-                                                                     <p>Mccoy Ballard</p>
-                                                                 </div>
-                                                                 <div class="inbox-message">
-                                                                     <div class="email-data"><span>Save 30% On The Entire
-                                                                             Spring Collection -<span>To take advantage of this
-                                                                                 exclusive offer, use the promo code
-                                                                                 <strong>SPRING30</strong> at
-                                                                                 checkout.</span></span>
-                                                                         <div class="badge badge-light-light">
-                                                                             Update_version.rar</div>
-                                                                     </div>
-                                                                     <div class="email-timing"><span>7 April</span></div>
-                                                                     <div class="email-options"><i
-                                                                             class="fa-regular fa-envelope envelope-1 show"></i><i
-                                                                             class="fa-regular fa-envelope-open envelope-2 hide"></i><i
-                                                                             class="fa-regular fa-trash-can trash-3"></i>
-                                                                     </div>
-                                                                 </div>
-                                                             </li>
-                                                         </ul>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                         <div class="card email-body email-read">
-                                             <div class="mail-header-wrapper header-wrapper1">
-                                                 <div class="mail-header1">
-                                                     <div class="light-square">
-                                                         <svg class="btn-email">
-                                                             <use href="../assets/svg/icon-sprite.svg#back-arrow"></use>
-                                                         </svg>
-                                                     </div><span>Interview Mail</span>
-                                                 </div>
-                                                 <div class="mail-body1">
-                                                     <div class="light-square" data-bs-toggle="tooltip"
-                                                         data-bs-placement="top" data-bs-title="Achieve">
-                                                         <svg>
-                                                             <use href="../assets/svg/icon-sprite.svg#sms"></use>
-                                                         </svg>
-                                                     </div>
-                                                     <div class="light-square" data-bs-toggle="tooltip"
-                                                         data-bs-placement="top" data-bs-title="Bookmark">
-                                                         <svg class="bookmark-box">
-                                                             <use href="../assets/svg/icon-sprite.svg#bookmark"></use>
-                                                         </svg>
-                                                     </div>
-                                                     <div class="light-square" data-bs-toggle="tooltip"
-                                                         data-bs-placement="top" data-bs-title="Spam">
-                                                         <svg>
-                                                             <use href="../assets/svg/icon-sprite.svg#spam"></use>
-                                                         </svg>
-                                                     </div>
-                                                     <div class="light-square bg-light-danger" data-bs-toggle="tooltip"
-                                                         data-bs-placement="top" data-bs-title="Trash">
-                                                         <svg class="stroke-danger">
-                                                             <use href="../assets/svg/icon-sprite.svg#mail-trash"></use>
-                                                         </svg>
-                                                     </div>
-                                                     <div class="light-square" data-bs-toggle="tooltip"
-                                                         data-bs-placement="top" data-bs-title="Settings">
-                                                         <svg>
-                                                             <use href="../assets/svg/icon-sprite.svg#setting"></use>
-                                                         </svg>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                             <div class="mail-body-wrapper">
-                                                 <div class="user-mail-wrapper">
-                                                     <div class="user-title">
-                                                         <div>
-                                                             <div class="rounded-border"> <img class="img-fluid"
-                                                                     src="../assets/images/user/12.png" alt="user">
-                                                             </div>
-                                                             <div class="dropdown-subtitle">
-                                                                 <p>Jacob Jones</p>
-                                                                 <div class="onhover-dropdown">
-                                                                     <button class="btn p-0 dropdown-button">To me <i
-                                                                             data-feather="chevron-down"> </i></button>
-                                                                     <div class="inbox-security onhover-show-div">
-                                                                         <p>From: <span>jones
-                                                                                 &lt;jacobjones3@gmail.com&gt;</span></p>
-                                                                         <p>to: <span>donut.horry@gmail.com</span></p>
-                                                                         <p>reply-to:<span>&lt;jacobjones3@gmail.com&gt;</span>
-                                                                         </p>
-                                                                         <p>date: <span>Jul 12, 2024, 7:10 AM</span></p>
-                                                                         <p>subject: <span>Important Account Security
-                                                                                 Update</span></p>
-                                                                         <p>security: <span>standard encryption (TLS)</span></p>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </div>
-                                                         <div class="inbox-options"> <span>Friday 07 Apr (4 hours ago)</span>
-                                                             <div class="light-square">
-                                                                 <svg class="important-mail">
-                                                                     <use href="../assets/svg/icon-sprite.svg#mail-star">
-                                                                     </use>
-                                                                 </svg>
-                                                             </div>
-                                                             <div class="light-square" onclick="myFunction()">
-                                                                 <svg>
-                                                                     <use href="../assets/svg/icon-sprite.svg#print"></use>
-                                                                 </svg>
-                                                             </div>
-                                                             <div class="light-square btn-group">
-                                                                 <div class="dropdown-toggle" role="main"
-                                                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                                                     <svg>
-                                                                         <use href="../assets/svg/icon-sprite.svg#menubar">
-                                                                         </use>
-                                                                     </svg>
-                                                                 </div>
-                                                                 <div class="dropdown-menu dropdown-block"><a
-                                                                         class="dropdown-item" href="#!"><i
-                                                                             class="fa fa-mail-reply"></i>Reply</a><a
-                                                                         class="dropdown-item" href="#!"> <i
-                                                                             class="fa fa-mail-forward"></i>Forward</a></div>
-                                                             </div>
-                                                         </div>
-                                                     </div>
-                                                     <div class="user-body">
-                                                         <p>Dear Customer,</p>
-                                                         <p>We regret to notify you that an unauthorized attempt was made to
-                                                             access your account. Our system discovered suspicious activity, and
-                                                             we acted right away to safeguard your personal data.</p>
-                                                         <p>Please change your login information by clicking the following link
-                                                             in order to safeguard your account:</p>
-                                                         <p>Please be aware that your account may be temporarily suspended if no
-                                                             action is taken within 24 hours. We urge you to take immediate
-                                                             action to prevent any inconvenience.</p>
-                                                         <p>We sincerely apologize for any inconvenience this may cause and
-                                                             thank you for your immediate attention to this matter.</p>
-                                                         <div class="mail-subcontent">
-                                                             <p>Yours faithfully,</p>
-                                                             <p>Account Security Team</p>
-                                                         </div>
-                                                     </div>
-                                                     <div class="user-footer">
-                                                         <div>
-                                                             <svg>
-                                                                 <use href="../assets/svg/icon-sprite.svg#attchment"></use>
-                                                             </svg><span class="f-light">Attachments</span>
-                                                         </div>
-                                                         <div class="d-inline-block">
-                                                             <div class="attachment-file common-flex">
-                                                                 <div class="common-flex align-items-center"><img
-                                                                         src="../assets/images/email-template/pdfs.png"
-                                                                         alt="pdf">
-                                                                     <div class="d-block">
-                                                                         <p>Offer_Letter.pdf</p>
-                                                                         <p>200KB</p>
-                                                                     </div>
-                                                                 </div><a href="../assets/pug/pages/template/text_file.pdf"
-                                                                     download> <i class="fa fa-download f-light"></i></a>
-                                                             </div>
-                                                         </div>
-                                                         <div class="toolbar-box">
-                                                             <div id="toolbar">
-                                                                 <button class="ql-bold">Bold </button>
-                                                                 <button class="ql-italic">Italic </button>
-                                                                 <button class="ql-underline">underline</button>
-                                                                 <button class="ql-strike">Strike </button>
-                                                                 <button class="ql-list" value="ordered">List </button>
-                                                                 <button class="ql-list" value="bullet"> </button>
-                                                                 <button class="ql-indent" value="-1"> </button>
-                                                                 <button class="ql-indent" value="+1"></button>
-                                                                 <button class="ql-link"></button>
-                                                                 <button class="ql-image"></button>
-                                                             </div>
-                                                             <div id="editor"></div>
-                                                         </div>
-                                                     </div>
-                                                     <div class="send-btn">
-                                                         <button class="btn btn-primary">Send<i
-                                                                 class="fa-solid fa-paper-plane"></i></button>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                         <div class="modal fade" id="compose_mail" tabindex="-1" aria-hidden="true">
-                                             <div class="modal-dialog modal-lg">
-                                                 <div class="modal-content">
-                                                     <div class="modal-header">
-                                                         <h4 class="modal-title fs-5">Compose Message</h4>
-                                                         <button class="btn-close" type="button" data-bs-dismiss="modal"
-                                                             aria-label="Close"></button>
-                                                     </div>
-                                                     <div class="modal-body compose-modal">
-                                                         <form>
-                                                             <div class="row mb-lg-3 g-1 mb-2">
-                                                                 <label class="col-lg-2 col-form-label" for="composeTo">To
-                                                                     :</label>
-                                                                 <div class="col-lg-10">
-                                                                     <input class="form-control" id="composeTo"
-                                                                         type="email">
-                                                                     <div class="add-bcc">
-                                                                         <div class="d-flex gap-2"><a class="btn"
-                                                                                 data-bs-toggle="collapse"
-                                                                                 href="#collapseCc" role="button"
-                                                                                 aria-expanded="false"
-                                                                                 aria-controls="collapseCc">Cc </a><a
-                                                                                 class="btn" data-bs-toggle="collapse"
-                                                                                 href="#collapseBcc" role="button"
-                                                                                 aria-expanded="false"
-                                                                                 aria-controls="collapseBcc">Bcc</a></div>
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                             <div class="collapse row mb-lg-3 mb-2" id="collapseCc">
-                                                                 <label class="col-lg-2 col-form-label"
-                                                                     for="composeCc">Cc:</label>
-                                                                 <div class="col-lg-10">
-                                                                     <input class="form-control" id="composeCc"
-                                                                         type="email" placeholder="elanarob@gmail.com">
-                                                                 </div>
-                                                             </div>
-                                                             <div class="collapse row mb-lg-3 mb-2" id="collapseBcc">
-                                                                 <label class="col-lg-2 col-form-label"
-                                                                     for="composeBcc">Bcc:</label>
-                                                                 <div class="col-lg-10">
-                                                                     <input class="form-control" id="composeBcc"
-                                                                         type="email" placeholder="stiphen@yahoo.com">
-                                                                 </div>
-                                                             </div>
-                                                             <div class="row mb-lg-3 g-1 mb-2">
-                                                                 <label class="col-lg-2 col-form-label"
-                                                                     for="composeSubject">Subject :</label>
-                                                                 <div class="col-lg-10">
-                                                                     <input class="form-control" id="composeSubject"
-                                                                         type="email">
-                                                                 </div>
-                                                             </div>
-                                                             <div class="toolbar-box mb-lg-3 mb-2">
-                                                                 <div id="toolbar1">
-                                                                     <button class="ql-bold">Bold </button>
-                                                                     <button class="ql-italic">Italic </button>
-                                                                     <button class="ql-underline">underline</button>
-                                                                     <button class="ql-strike">Strike </button>
-                                                                     <button class="ql-list" value="ordered">List </button>
-                                                                     <button class="ql-list" value="bullet"> </button>
-                                                                     <button class="ql-indent" value="-1"> </button>
-                                                                     <button class="ql-indent" value="+1"></button>
-                                                                     <button class="ql-link"></button>
-                                                                     <button class="ql-image"></button>
-                                                                 </div>
-                                                                 <div id="editor1"></div>
-                                                             </div>
-                                                             <div class="row mb-3 align-items-center g-1">
-                                                                 <label class="col-lg-2 col-form-label"
-                                                                     for="composeSubject">Attachments :</label>
-                                                                 <div class="col-lg-10">
-                                                                     <input class="form-control" id="formFileMultiple"
-                                                                         type="file" multiple="">
-                                                                 </div>
-                                                             </div>
-                                                         </form>
-                                                     </div>
-                                                     <div class="modal-footer">
-                                                         <button class="btn button-light-primary" type="button">Save As
-                                                             Draft</button>
-                                                         <button class="btn btn-primary" type="button"
-                                                             data-bs-dismiss="modal">Send</button>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                         <div class="modal fade" id="label-pill" tabindex="-1" aria-hidden="true">
-                                             <div class="modal-dialog modal-lg">
-                                                 <div class="modal-content">
-                                                     <div class="modal-header">
-                                                         <h4 class="modal-title fs-5">Add Label</h4>
-                                                         <button class="btn-close" type="button" data-bs-dismiss="modal"
-                                                             aria-label="Close"></button>
-                                                     </div>
-                                                     <div class="modal-body add-label-modal">
-                                                         <form class="custom-input row">
-                                                             <div class="col">
-                                                                 <div class="row">
-                                                                     <label class="col-lg-2 col-form-label"
-                                                                         for="Label_Modal">Label Name :</label>
-                                                                     <div class="col-lg-10">
-                                                                         <input class="form-control" id="Label_Modal"
-                                                                             type="email" placeholder="Enter label name">
-                                                                     </div>
-                                                                 </div>
-                                                                 <div class="row">
-                                                                     <label class="col-lg-2 col-form-label"
-                                                                         for="Email_Modal">Email :</label>
-                                                                     <div class="col-lg-10">
-                                                                         <input class="form-control" id="Email_Modal"
-                                                                             type="email" placeholder="Enter your email">
-                                                                     </div>
-                                                                 </div>
-                                                                 <div class="row">
-                                                                     <label class="form-label col-lg-2 col-sm-3"
-                                                                         for="exampleColorInput">Label Color :</label>
-                                                                     <div class="col-2">
-                                                                         <input class="form-control form-control-color"
-                                                                             id="exampleColorInput" type="color"
-                                                                             value="#7366FF" title="Choose your color">
-                                                                     </div>
-                                                                 </div>
-                                                             </div>
-                                                         </form>
-                                                     </div>
-                                                     <div class="modal-footer">
-                                                         <button class="btn button-light-primary" type="button"
-                                                             data-bs-dismiss="modal">Cancel</button>
-                                                         <button class="btn btn-primary" type="button">Add</button>
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-                                     </div>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>
-                 </div>
-                 <!-- Container-fluid Ends-->
-                 <!-- footer start-->
-
-             </div>
-         </div>
-     @endslot
- @endcomponent
+          <script class="empty-template" type="text/x-handlebars-template"><div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div></script>
+        </div>
+      </div>
+      <!-- Page Header Ends                              -->
+      <!-- Page Body Start-->
+      <div class="page-body-wrapper">
+        <!-- Page Sidebar Start-->
+        <div class="sidebar-wrapper" data-sidebar-layout="stroke-svg">
+          <div>
+            <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light" src="../assets/images/logo/logo.png" alt=""><img class="img-fluid for-dark" src="../assets/images/logo/logo_dark.png" alt=""></a>
+              <div class="back-btn"><i class="fa-solid fa-angle-left"></i></div>
+              <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
+            </div>
+            <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
+            <nav class="sidebar-main">
+              <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+              <div id="sidebar-menu">
+                <ul class="sidebar-links" id="simple-bar">
+                  <li class="back-btn"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a>
+                    <div class="mobile-back text-end"><span>Back</span><i class="fa-solid fa-angle-right ps-2" aria-hidden="true"></i></div>
+                  </li>
+                  <li class="pin-title sidebar-main-title">
+                    <div> 
+                      <h6>Pinned</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-main-title">
+                    <div>
+                      <h6 class="lan-1">General</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i>
+                    <label class="badge badge-light-primary">13</label><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-home')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-home')}}"></use>
+                      </svg><span class="lan-3">Dashboard          </span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a class="lan-4" href="index.html">Default</a></li>
+                      <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li>
+                      <li><a href="dashboard-03.html">Online course</a></li>
+                      <li><a href="dashboard-04.html">Crypto</a></li>
+                      <li><a href="dashboard-05.html">Social</a></li>
+                      <li><a href="dashboard-06.html">NFT</a></li>
+                      <li> <a href="dashboard-07.html">School management</a></li>
+                      <li> <a href="dashboard-08.html">POS</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="dashboard-09.html">CRM</a>
+                      </li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="dashboard-10.html">Analytics</a>
+                      </li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="dashboard-11.html">HR</a>
+                      </li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="dashboard-12.html">Projects</a>
+                      </li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="dashboard-13.html">Logistics</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-widget')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-widget')}}"></use>
+                      </svg><span class="lan-6">Widgets</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="general-widget.html">General</a></li>
+                      <li><a href="chart-widget.html">Chart</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-layout')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-layout')}}"></use>
+                      </svg><span class="lan-7">Page layout</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="box-layout.html">Boxed</a></li>
+                      <li><a href="layout-rtl.html">RTL</a></li>
+                      <li><a href="layout-dark.html">Dark Layout</a></li>
+                      <li><a href="hide-on-scroll.html">Hide Nav Scroll</a></li>
+                      <li><a href="footer-light.html">Footer Light</a></li>
+                      <li><a href="footer-dark.html">Footer Dark</a></li>
+                      <li><a href="footer-fixed.html">Footer Fixed</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-main-title">
+                    <div>
+                      <h6 class="lan-8">Applications</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"> </i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-project')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-project')}}"></use>
+                      </svg><span>Projects        </span></a>
+                    <ul class="sidebar-submenu">
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="project-details.html">Project Details</a>
+                      </li>
+                      <li><a href="project-list.html">Project List</a></li>
+                      <li><a href="createnew.html">Create new</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="file-manager.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-file')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-file')}}"></use>
+                      </svg><span>File manager</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack">           </i><a class="sidebar-link sidebar-title link-nav" href="kanban.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-board')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-board')}}"></use>
+                      </svg><span>kanban Board</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-ecommerce')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-ecommerce')}}"></use>
+                      </svg><span>Ecommerce</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a class="submenu-title" href="index.html#">Products<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="add-products.html">Add Product</a></li>
+                          <li><a href="product-grid.html">Products Grid</a></li>
+                          <li><a href="products-list.html">Products List</a></li>
+                          <li><a href="product-details.html">Product Details</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="category.html">Category</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a class="submenu-title" href="index.html#">Seller<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="seller-list.html">Seller List</a></li>
+                          <li><a href="seller-details.html">Seller Details</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="index.html#">Orders<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="order-history.html">Order History</a></li>
+                          <li>
+                            <label class="badge badge-light-success">New</label><a href="order-details.html">Order Details</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="index.html#">Invoices<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="invoice-1.html">Invoice-1</a></li>
+                          <li><a href="invoice-2.html">Invoice-2</a></li>
+                          <li><a href="invoice-3.html">Invoice-3</a></li>
+                          <li><a href="invoice-4.html">Invoice-4</a></li>
+                          <li><a href="invoice-5.html">Invoice-5</a></li>
+                          <li><a href="invoice-template.html">Invoice-6</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="cart.html">Cart</a></li>
+                      <li><a href="wishlist.html">Wishlist</a></li>
+                      <li><a href="checkout.html">Checkout</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="manage-review.html">Manage Review</a>
+                      </li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="settings.html">Settings</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="mail-box.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-email')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-email')}}"></use>
+                      </svg><span>Mail Box</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-chat')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-chat')}}"></use>
+                      </svg><span>Chat</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="private-chat.html">Private Chat</a></li>
+                      <li><a href="group-chat.html">Group Chat</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-user')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-user')}}"></use>
+                      </svg><span>Users</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="user-profile.html">User Profile</a></li>
+                      <li><a href="add-user.html">Add User</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="user-list.html">User List</a>
+                      </li>
+                      <li><a href="user-cards.html">User Cards</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="roles-permission.html">Roles & Permission</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list">
+                    <label class="badge badge-light-success">New</label><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-reports')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-reports')}}"></use>
+                      </svg><span>Reports</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="product-report.html">Products</a></li>
+                      <li><a href="sales-report.html">Sales</a></li>
+                      <li><a href="sales-return.html">Sales Return</a></li>
+                      <li><a href="customer-order.html">Customer Order</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="bookmark.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-bookmark')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-bookmark')}}"> </use>
+                      </svg><span>Bookmarks</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="contacts.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-contact')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-contact')}}"> </use>
+                      </svg><span>Contacts</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="task.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-task')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-task')}}"> </use>
+                      </svg><span>Tasks</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="calendar.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-calendar')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-calender')}}"></use>
+                      </svg><span>Calendar</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="social-app.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-social')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-social')}}"> </use>
+                      </svg><span>Social App</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="to-do.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-to-do')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-to-do')}}"> </use>
+                      </svg><span>To-Do</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="search-result.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-search')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-search')}}"> </use>
+                      </svg><span>Search Result</span></a></li>
+                  <li class="sidebar-main-title">
+                    <div>
+                      <h6>Forms & Table</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-form')}}"></use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-form')}}"> </use>
+                      </svg><span>Forms</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a class="submenu-title" href="index.html#">Form Controls<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="form-validation.html">Form Validation</a></li>
+                          <li><a href="base-input.html">Base Inputs</a></li>
+                          <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
+                          <li><a href="input-group.html">Input Groups</a></li>
+                          <li> <a href="input-mask.html">Input Mask</a></li>
+                          <li><a href="megaoptions.html">Mega Options</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="index.html#">Form Widgets<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="datepicker.html">Datepicker</a></li>
+                          <li><a href="touchspin.html">Touchspin</a></li>
+                          <li><a href="select2.html">Select2</a></li>
+                          <li><a href="switch.html">Switch</a></li>
+                          <li><a href="typeahead.html">Typeahead</a></li>
+                          <li><a href="clipboard.html">Clipboard</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="index.html#">Form layout<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="form-wizard.html">Form Wizard 1</a></li>
+                          <li><a href="form-wizard-two.html">Form Wizard 2</a></li>
+                          <li><a href="two-factor.html">Two Factor</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-table')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-table')}}"> </use>
+                      </svg><span>Tables</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a class="submenu-title" href="index.html#">Bootstrap Tables<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="bootstrap-basic-table.html">Basic Tables</a></li>
+                          <li><a href="table-components.html">Table components</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="index.html#">Data Tables<span class="sub-arrow"><i class="fa-solid fa-angle-right"></i></span></a>
+                        <ul class="sidebar-submenu">
+                          <li><a href="datatable-basic-init.html">Basic Init</a></li>
+                          <li> <a href="datatable-advance.html">Advance Init </a></li>
+                          <li><a href="datatable-API.html">API</a></li>
+                          <li><a href="datatable-data-source.html">Data Sources</a></li>
+                          <li><a href="datatable-ext-autofill.html">Extensions</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="jsgrid-table.html">Js Grid Table        </a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-main-title">
+                    <div>
+                      <h6>Components</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-ui-kits')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-ui-kits')}}"> </use>
+                      </svg><span>Ui Kits</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="typography.html">Typography</a></li>
+                      <li><a href="avatars.html">Avatars</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="divider.html">Divider</a>
+                      </li>
+                      <li><a href="helper-classes.html">helper classes</a></li>
+                      <li><a href="grid.html">Grid</a></li>
+                      <li><a href="tag-pills.html">Tags & pills</a></li>
+                      <li><a href="progress-bar.html">Progress</a></li>
+                      <li><a href="modal.html">Modal</a></li>
+                      <li><a href="alert.html">Alert</a></li>
+                      <li><a href="popover.html">Popover</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="placeholders.html">Placeholders</a>
+                      </li>
+                      <li><a href="tooltip.html">Tooltip</a></li>
+                      <li><a href="dropdown.html">Dropdown</a></li>
+                      <li><a href="according.html">Accordion</a></li>
+                      <li><a href="tab-bootstrap.html">Tabs</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="offcanvas.html">Offcanvas</a>
+                      </li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="navigate-links.html">Navigate Links</a>
+                      </li>
+                      <li><a href="list.html">Lists</a></li>
+                      <li><a href="abc.html">abc</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-bonus-kit')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-bonus-kit')}}"> </use>
+                      </svg><span>Bonus Ui</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="scrollable.html">Scrollable</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="tree.html">Tree view</a>
+                      </li>
+                      <li><a href="toasts.html">Toasts</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="block-ui.html">BlockUI</a>
+                      </li>
+                      <li><a href="rating.html">Rating</a></li>
+                      <li><a href="dropzone.html">dropzone</a></li>
+                      <li><a href="tour.html">Tour</a></li>
+                      <li><a href="sweet-alert2.html">Sweet Alert2</a></li>
+                      <li><a href="modal-animated.html">Animated Modal</a></li>
+                      <li><a href="owl-carousel.html">Owl Carousel</a></li>
+                      <li><a href="ribbons.html">Ribbons</a></li>
+                      <li><a href="pagination.html">Pagination</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="scrollspy.html">ScrollSpy</a>
+                      </li>
+                      <li><a href="breadcrumb.html">Breadcrumb</a></li>
+                      <li><a href="range-slider.html">Range Slider</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="ratios.html">Ratios</a>
+                      </li>
+                      <li><a href="image-cropper.html">Image cropper</a></li>
+                      <li><a href="basic-card.html">Basic Card</a></li>
+                      <li><a href="creative-card.html">Creative Card</a></li>
+                      <li><a href="draggable-card.html">Draggable Card</a></li>
+                      <li><a href="timeline-v-1.html">Timeline </a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-animation')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-animation')}}"> </use>
+                      </svg><span>Animations</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="animate.html">Animate</a></li>
+                      <li><a href="scroll-reval.html">Scroll Reveal</a></li>
+                      <li><a href="AOS.html">AOS animation</a></li>
+                      <li><a href="tilt.html">Tilt Animation</a></li>
+                      <li><a href="wow.html">Wow Animation</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="flash-icon.html">Flash Icons</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-icons')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-icons')}}"> </use>
+                      </svg><span>Icons</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="flag-icon.html">Flag icon</a></li>
+                      <li><a href="font-awesome.html">Fontawesome Icon</a></li>
+                      <li><a href="ico-icon.html">Ico Icon</a></li>
+                      <li><a href="themify-icon.html">Themify Icon</a></li>
+                      <li><a href="feather-icon.html">Feather icon</a></li>
+                      <li><a href="weather-icon.html">Weather Icon</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="buttons.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-button')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-button')}}"> </use>
+                      </svg><span>Button</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-charts')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-charts')}}"> </use>
+                      </svg><span>Charts</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="chart-apex.html">Apex Chart</a></li>
+                      <li><a href="chart-google.html">Google Chart</a></li>
+                      <li><a href="chart-sparkline.html">Sparkline chart</a></li>
+                      <li><a href="chart-flot.html">Flot Chart</a></li>
+                      <li><a href="chart-knob.html">Knob Chart</a></li>
+                      <li><a href="chart-morris.html">Morris Chart</a></li>
+                      <li><a href="chartjs.html">Chatjs Chart</a></li>
+                      <li><a href="chartist.html">Chartist Chart</a></li>
+                      <li><a href="chart-peity.html">Peity Chart</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-main-title">
+                    <div>
+                      <h6>Pages</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="landing-page.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-landing-page')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-landing-page')}}"> </use>
+                      </svg><span>Landing page</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="sample-page.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-sample-page')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-sample-page')}}"> </use>
+                      </svg><span>Sample page</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="internationalization.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-internationalization')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-internationalization')}}"> </use>
+                      </svg><span>Internationalization</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="https://admin.pixelstrap.com/cuba/starter-kit/index.html" target="_blank">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-starter-kit')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-starter-kit')}}"> </use>
+                      </svg><span>Starter kit</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-error')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-error')}}"> </use>
+                      </svg><span>Error Pages</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="error-403.html">Error 403</a></li>
+                      <li><a href="error-404.html">Error 404</a></li>
+                      <li><a href="error-500.html">Error 500</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-authenticate')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-authenticate')}}"> </use>
+                      </svg><span>Authentication</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="login.html" target="_blank">Login Simple</a></li>
+                      <li><a href="login_one.html" target="_blank">Login with bg image</a></li>
+                      <li><a href="login_two.html" target="_blank">Login with image two                      </a></li>
+                      <li><a href="login_three.html" target="_blank">Login With Image Three</a></li>
+                      <li><a href="login_with_tooltip.html" target="_blank">Login with tooltip</a></li>
+                      <li><a href="login_with_sweetalert.html" target="_blank">Login with sweetalert</a></li>
+                      <li><a href="register_simple.html" target="_blank">Register Simple</a></li>
+                      <li><a href="register_with_bg_image.html" target="_blank">Register with Bg Image                              </a></li>
+                      <li><a href="register_with_image_two.html" target="_blank">Register with image two</a></li>
+                      <li><a href="register_wizard.html" target="_blank">Register wizard</a></li>
+                      <li><a href="account-restricted.html" target="_blank">Account Restricted</a></li>
+                      <li><a href="unlock.html">Unlock User</a></li>
+                      <li><a href="forgot-password.html">Forgot Password</a></li>
+                      <li><a href="reset-password.html">Reset Password</a></li>
+                      <li><a href="maintenance.html">Maintenance</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-coming-soon')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-coming-soon')}}"> </use>
+                      </svg><span>Coming Soon</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="comingsoon.html">Coming Simple</a></li>
+                      <li><a href="comingsoon-bg-video.html">Coming with Bg video</a></li>
+                      <li><a href="comingsoon-bg-img.html">Coming with Bg Image</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-email-temp')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-email-temp')}}"> </use>
+                      </svg><span>Email templates</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="basic-template.html">Basic Email</a></li>
+                      <li><a href="email-header.html">Basic With Header</a></li>
+                      <li><a href="template-email.html">Ecomerce Template</a></li>
+                      <li><a href="template-email-2.html">Email Template 2</a></li>
+                      <li><a href="ecommerce-templates.html">Ecommerce Email</a></li>
+                      <li><a href="email-order-success.html">Order Success</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list">
+                    <label class="badge badge-light-success">New</label><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="manage-api.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-api')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-api')}}"> </use>
+                      </svg><span>Manage API</span></a>
+                  </li>
+                  <li class="sidebar-list">
+                    <label class="badge badge-light-success">New</label><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="sitemap.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-sitemap')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-sitemap')}}"> </use>
+                      </svg><span>Site Map</span></a>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="pricing.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-price')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-price')}}"> </use>
+                      </svg><span>Pricing  </span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="faq.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-faq')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-faq')}}"> </use>
+                      </svg><span>FAQ</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="subscribed-user.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-subscribe')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-subscribe')}}"> </use>
+                      </svg><span>Subscribed User</span></a></li>
+                  <li class="sidebar-main-title">
+                    <div>
+                      <h6>Miscellaneous</h6>
+                    </div>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-gallery')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-gallery')}}"> </use>
+                      </svg><span>Gallery</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="gallery.html">Gallery Grid</a></li>
+                      <li><a href="gallery-with-description.html">Gallery Grid Desc</a></li>
+                      <li><a href="gallery-masonry.html">Masonry Gallery</a></li>
+                      <li><a href="masonry-gallery-with-disc.html">Masonry with Desc</a></li>
+                      <li><a href="hover-effects.html">Hover Effects</a></li>
+                      <li>
+                        <label class="badge badge-light-success">New</label><a href="gallery-with-placeholder.html">Gallery Placeholder</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-blog')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-blog')}}"> </use>
+                      </svg><span>Blog</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="blog-details.html">Blog Details</a></li>
+                      <li><a href="add-blog.html">Add Blog</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-job-search')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-job-search')}}"> </use>
+                      </svg><span>Jobs</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="job-cards-view.html">Cards view</a></li>
+                      <li><a href="job-list-view.html">List View</a></li>
+                      <li><a href="job-details.html">Job Details</a></li>
+                      <li><a href="candidates.html">Candidates</a></li>
+                      <li><a href="companies.html">Companies</a></li>
+                      <li><a href="job-apply.html">Apply</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-learning')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-learning')}}"> </use>
+                      </svg><span>Courses</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="course-list-view.html">Course List</a></li>
+                      <li><a href="course-details.html">Course Details</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-maps')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-maps')}}"> </use>
+                      </svg><span>Maps</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="map-js.html">Maps JS</a></li>
+                      <li><a href="vector-map.html">Vector Maps</a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title" href="index.html#">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-editors')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-editors')}}"> </use>
+                      </svg><span>Editors</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a href="quilleditor.html">Quill Editor</a></li>
+                      <li><a href="ckeditor.html">CK Editor</a></li>
+                      <li><a href="ace-code-editor.html">ACE Code Editor </a></li>
+                    </ul>
+                  </li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="knowledgebase.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-knowledgebase')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-knowledgebase')}}"> </use>
+                      </svg><span>Knowledgebase</span></a></li>
+                  <li class="sidebar-list"><i class="fa-solid fa-thumbtack"></i><a class="sidebar-link sidebar-title link-nav" href="support-ticket.html">
+                      <svg class="stroke-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-support-tickets')}}"> </use>
+                      </svg>
+                      <svg class="fill-icon">
+                        <use href="{{asset('/assets/svg/icon-sprite.svg#fill-support-tickets')}}"> </use>
+                      </svg><span>Support Ticket</span></a></li>
+                </ul>
+              </div>
+              <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+            </nav>
+          </div>
+        </div>
+        <!-- Page Sidebar Ends-->
+        <div class="page-body">
+          <div class="container-fluid">        
+            <div class="page-title">
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3>Default </h3>
+                </div>
+                <div class="col-sm-6">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">                                       
+                        <svg class="stroke-icon">
+                          <use href="{{asset('/assets/svg/icon-sprite.svg#stroke-home')}}"> </use>
+                        </svg></a></li>
+                    <li class="breadcrumb-item">Dashboard</li>
+                    <li class="breadcrumb-item active">Default      </li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid starts-->
+          <div class="container-fluid default-dashboard">
+            <div class="row widget-grid">
+              <div class="col-xxl-4 col-sm-6 box-col-6"> 
+                <div class="card profile-box">
+                  <div class="card-body">
+                    <div class="d-flex media-wrapper justify-content-between">
+                      <div class="flex-grow-1"> 
+                        <div class="greeting-user">
+                          <h2 class="f-w-600">Welcome Emay Walter!</h2>
+                          <p>Here whats happing in your account today</p>
+                          <div class="whatsnew-btn"><a class="btn btn-outline-white" href="user-profile.html" target="_blank">View Profile</a></div>
+                        </div>
+                      </div>
+                      <div>  
+                        <div class="clockbox">
+                          <svg id="clock" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+                            <g id="face">
+                              <circle class="circle" cx="300" cy="300" r="253.9"></circle>
+                              <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"></path>
+                              <circle class="mid-circle" cx="300" cy="300" r="16.2"></circle>
+                            </g>
+                            <g id="hour">
+                              <path class="hour-hand" d="M300.5 298V142"></path>
+                              <circle class="sizing-box" cx="300" cy="300" r="253.9"></circle>
+                            </g>
+                            <g id="minute">
+                              <path class="minute-hand" d="M300.5 298V67">   </path>
+                              <circle class="sizing-box" cx="300" cy="300" r="253.9"></circle>
+                            </g>
+                            <g id="second">
+                              <path class="second-hand" d="M300.5 350V55"></path>
+                              <circle class="sizing-box" cx="300" cy="300" r="253.9">   </circle>
+                            </g>
+                          </svg>
+                        </div>
+                        <div class="badge f-10 p-0" id="txt"></div>
+                      </div>
+                    </div>
+                    <div class="cartoon"><img class="img-fluid" src="../assets/images/dashboard/cartoon.svg" alt="vector women with leptop"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-auto col-xl-3 col-sm-6 box-col-3"> 
+                <div class="row"> 
+                  <div class="col-xl-12"> 
+                    <div class="card widget-1">
+                      <div class="card-body">
+                        <div class="widget-content">
+                          <div class="widget-round secondary">
+                            <div class="bg-round">
+                              <svg>
+                                <use href="{{asset('/assets/svg/icon-sprite.svg#c-revenue')}}"> </use>
+                              </svg>
+                              <svg class="half-circle svg-fill">
+                                <use href="{{asset('/assets/svg/icon-sprite.svg#halfcircle')}}"> </use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div> 
+                            <h4>$<span class="counter" data-target="45195">0</span></h4><span class="f-light">Revenue</span>
+                          </div>
+                        </div>
+                        <div class="font-success f-w-500"><i class="bookmark-search me-1" data-feather="trending-up"></i><span class="txt-success">+50%</span></div>
+                      </div>
+                    </div>
+                    <div class="col-xl-12"> 
+                      <div class="card widget-1">
+                        <div class="card-body">
+                          <div class="widget-content">
+                            <div class="widget-round success">
+                              <div class="bg-round">
+                                <svg>
+                                  <use href="{{asset('/assets/svg/icon-sprite.svg#c-customer')}}"> </use>
+                                </svg>
+                                <svg class="half-circle svg-fill">
+                                  <use href="{{asset('/assets/svg/icon-sprite.svg#halfcircle')}}"> </use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div> 
+                              <h4> <span class="counter" data-target="845">0</span>+</h4><span class="f-light">Customers</span>
+                            </div>
+                          </div>
+                          <div class="font-danger f-w-500"><i class="bookmark-search me-1" data-feather="trending-down"></i><span class="txt-danger">-40%</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-auto col-xl-3 col-sm-6 box-col-3"> 
+                <div class="row"> 
+                  <div class="col-xl-12"> 
+                    <div class="card widget-1">
+                      <div class="card-body"> 
+                        <div class="widget-content">
+                          <div class="widget-round warning">
+                            <div class="bg-round">
+                              <svg>
+                                <use href="{{asset('/assets/svg/icon-sprite.svg#c-profit')}}"> </use>
+                              </svg>
+                              <svg class="half-circle svg-fill">
+                                <use href="{{asset('/assets/svg/icon-sprite.svg#halfcircle')}}"> </use>
+                              </svg>
+                            </div>
+                          </div>
+                          <div> 
+                            <h4> <span class="counter" data-target="80">0</span>%</h4><span class="f-light">Profit</span>
+                          </div>
+                        </div>
+                        <div class="font-danger f-w-500"><i class="bookmark-search me-1" data-feather="trending-down"></i><span class="txt-danger">-20%</span></div>
+                      </div>
+                    </div>
+                    <div class="col-xl-12"> 
+                      <div class="card widget-1">
+                        <div class="card-body"> 
+                          <div class="widget-content">
+                            <div class="widget-round primary">
+                              <div class="bg-round">
+                                <svg class="fill-primary">
+                                  <use href="{{asset('/assets/svg/icon-sprite.svg#c-invoice')}}"> </use>
+                                </svg>
+                                <svg class="half-circle svg-fill">
+                                  <use href="{{asset('/assets/svg/icon-sprite.svg#halfcircle')}}"> </use>
+                                </svg>
+                              </div>
+                            </div>
+                            <div> 
+                              <h4 class="counter" data-target="10905">0</h4><span class="f-light">Invoices</span>
+                            </div>
+                          </div>
+                          <div class="font-success f-w-500"><i class="bookmark-search me-1" data-feather="trending-up"></i><span class="txt-success">+50%</span></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-auto col-xl-4 col-sm-6 box-col-4 ord-xl-5 box-ord-5">
+                <div class="card">
+                  <div class="card-header card-no-border pb-2">
+                    <div class="header-top"> 
+                      <h5>Visitors</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="visitorButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="visitorButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body visitor-chart pt-0">
+                    <div class="common-flex">
+                      <h6><span class="counter" data-target="98736">0</span>K</h6>
+                      <div class="d-flex"> 
+                        <p>( <span class="txt-success f-w-500 me-1">+0.4%</span>Than last week)</p>
+                      </div>
+                    </div>
+                    <div id="visitor_chart"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-sm-6 ord-xl-1 ord-md-1 box-ord-1 box-col-6">
+                <div class="card"> 
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Top Customers</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="customerButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="customerButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body main-customer-table px-0 pt-0">
+                    <div class="recent-table table-responsive custom-scrollbar">
+                      <table class="table" id="top-customer">
+                        <thead> 
+                          <tr>
+                            <th></th>
+                            <th>Customers</th>
+                            <th>Total Purchase</th>
+                            <th>Total Price</th>
+                          </tr>
+                        </thead>
+                        <tbody> 
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard/user/2.jpg" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Jane Cooper</a>
+                                  <p class="mb-0 f-light">#452140</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>65 Purchases</td>
+                            <td class="f-w-500 txt-success">$970.00</td>
+                          </tr>
+                          <tr> 
+                            <td></td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard/user/3.jpg" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Wade Warren</a>
+                                  <p class="mb-0 f-light">#844967</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>42 Purchases</td>
+                            <td class="f-w-500 txt-success">$300.00</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard/user/4.jpg" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Guy Hawkins</a>
+                                  <p class="mb-0 f-light">#321489</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>38 Purchases</td>
+                            <td class="f-w-500 txt-success">$900.00</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard/user/5.jpg" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Jake Spy</a>
+                                  <p class="mb-0 f-light">#954687</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>23 Purchases</td>
+                            <td class="f-w-500 txt-success">$300.00</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard-9/user/1.png" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Devin Jake</a>
+                                  <p class="mb-0 f-light">#562778</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>12 Purchases</td>
+                            <td class="f-w-500 txt-success">$500.00</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard-9/user/2.png" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Jacob Jones</a>
+                                  <p class="mb-0 f-light">#589356</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>10 Purchases</td>
+                            <td class="f-w-500 txt-success">$420.00</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard-9/user/5.png" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Jams Bone</a>
+                                  <p class="mb-0 f-light">#589657</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>10 Purchases</td>
+                            <td class="f-w-500 txt-success">$440.00</td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>
+                              <div class="d-flex"><img class="img-fluid img-40 rounded-circle me-2" src="../assets/images/dashboard-9/user/3.png" alt="user">
+                                <div class="img-content-box"><a class="f-w-500" href="products-list.html">Mili Pais</a>
+                                  <p class="mb-0 f-light">#589654</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>12 Purchases</td>
+                            <td class="f-w-500 txt-success">$240.00</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-5 col-lg-6 box-col-6 ord-xl-2 ord-md-3 box-ord-2">
+                <div class="card">
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Sales Statistical Overview</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown custom-dropdown">
+                          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Year</button>
+                          <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="index.html#!">Day</a></li>
+                            <li><a class="dropdown-item" href="index.html#!">Month</a></li>
+                            <li><a class="dropdown-item" href="index.html#!">Year</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body pt-0">
+                    <div class="row m-0 overall-card">
+                      <div class="col-12 p-0">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+                        <div class="chart-right">
+                          <div class="row">
+                            <div class="col-xl-12">
+                              <div class="card-body p-0 statistical-card">
+                                <ul class="d-flex m-b-15">
+                                  <li>
+                                    <h5 class="counter" data-target="19897">0</h5><span class="f-light">Total Cost</span>
+                                  </li>
+                                  <li>
+                                    <h5>
+                                       $<span class="counter" data-target="849058">0</span></h5><span class="f-light">Total Revenue</span>
+                                  </li>
+                                </ul>
+                                <div class="current-sale-container">
+                                  <div id="chart-currently"></div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6 ord-xl-3 ord-md-4 box-ord-3">
+                <div class="card monthly-header"> 
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Monthly Target</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="monthlyButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="monthlyButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body"> 
+                    <div class="monthly-target">
+                      <div class="position-relative" id="monthly_target"></div>
+                    </div>
+                    <div class="target-content">
+                      <p>Revenue Surges! Today's earnings soar to $3653, marking an impressive uptick from last month. Keep the momentum going!</p>
+                      <div class="common-box">
+                        <ul class="common-flex">
+                          <li>
+                            <h6>Revenue</h6><span class="common-space badge badge-light-success"> <i class="me-1" data-feather="trending-up"></i>$20k</span>
+                          </li>
+                          <li>
+                            <h6>Target</h6><span class="common-space badge badge-light-danger"><i class="me-1" data-feather="trending-down"></i>$16k</span>
+                          </li>
+                          <li>
+                            <h6>Today</h6><span class="common-space badge badge-light-success"><i class="me-1" data-feather="trending-up"></i>$1.6k</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5 col-md-6 ord-xl-4 ord-md-5 box-ord-4">
+                <div class="card activity-log notification main-timeline">
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Activity Log </h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="activityButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="activityButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body pt-0 dark-timeline basic-timeline">
+                    <ul> 
+                      <li class="d-flex">
+                        <div class="timeline-dot-primary"></div>
+                        <div class="w-100 ms-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="mb-0 f-16 f-w-500">Brooklyn Simmons<span class="f-w-400">(Commented:<a href="index.html#!">&nbsp;NFT App</a>)</span></p><span class="c-light">7:00 AM </span>
+                          </div>
+                          <p class="mb-0 f-light pb-1">This smithe design looks great...</p>
+                          <p class="date-content p-0">22 Feb 2024</p>
+                        </div>
+                      </li>
+                      <li class="d-flex">
+                        <div class="timeline-dot-secondary"></div>
+                        <div class="w-100 ms-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="mb-0 f-16 f-w-500">Leslie Alexander<span class="f-w-400">(Shared images:<a href="index.html#!">&nbsp; Barkha</a>)</span></p><span class="c-light">5:12 AM </span>
+                          </div>
+                          <p class="mb-0 f-light pb-1">Food Delivery App figma &amp; Ai...</p>
+                          <ul class="common-flex pb-1">
+                            <li><img class="img-fluid" src="../assets/images/dashboard/bg-1.png" alt="background"></li>
+                            <li><img class="img-fluid" src="../assets/images/dashboard/bg-2.png" alt="background"></li>
+                            <li><img class="img-fluid" src="../assets/images/dashboard/bg-3.png" alt="background"></li>
+                          </ul>
+                          <p class="date-content p-0">15 Feb 2024</p>
+                        </div>
+                      </li>
+                      <li class="d-flex">
+                        <div class="timeline-dot-success"></div>
+                        <div class="w-100 ms-3">
+                          <div class="d-flex justify-content-between align-items-center">
+                            <p class="mb-0 f-16 f-w-500">Kristin Watson <span class="f-w-400">(Add new screen:  <a href="index.html#!">&nbsp;Cuba Admin</a>)</span></p><span class="c-light">7:00 AM </span>
+                          </div>
+                          <p class="mb-0 f-light pb-1">Make sure your AI file is cloud storage...</p>
+                          <p class="date-content p-0">10 Jan 2024</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-7 col-lg-8 ord-xl-6 ord-md-6 box-ord-6 box-col-8e">
+                <div class="card">
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Recent Orders</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="recentButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="recentButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body px-0 pt-0 common-option">
+                    <div class="recent-table table-responsive currency-table recent-order-table custom-scrollbar"> 
+                      <table class="table" id="main-recent-order">
+                        <thead> 
+                          <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Customers</th>
+                            <th>Qty</th>
+                            <th>Total Price</th>
+                            <th>Order Date</th>
+                            <th>Status</th>
+                          </tr>
+                        </thead>
+                        <tbody> 
+                          <tr> 
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/16.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Bag</a>
+                                  <p class="c-o-light">#452140 </p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Jenny Wilson</td>
+                            <td>2 PCS</td>
+                            <td>$2,854</td>
+                            <td>16 Jan,2024</td>
+                            <td> 
+                              <button class="btn button-light-success txt-success f-w-500">Delivered</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/25.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Sofa</a>
+                                  <p class="c-o-light">#844967</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Esther Howard</td>
+                            <td>1 PCS</td>
+                            <td>$9,943</td>
+                            <td>21 Feb,2024</td>
+                            <td> 
+                              <button class="btn button-light-warning txt-warning f-w-500">In Progress</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/26.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Lamp</a>
+                                  <p class="c-o-light">#321489</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Darrell Steward</td>
+                            <td>1 PCS</td>
+                            <td>$8,195</td>
+                            <td>09 Mar,2024</td>
+                            <td> 
+                              <button class="btn button-light-info txt-info f-w-500">Pending</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/24.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Watch</a>
+                                  <p class="c-o-light">#954687</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Dianne Russell</td>
+                            <td>3 PCS</td>
+                            <td>$1,706</td>
+                            <td>14 Apr,2024</td>
+                            <td> 
+                              <button class="btn button-light-danger txt-danger f-w-500">Canceled</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/6.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Football</a>
+                                  <p class="c-o-light">#896748</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Darrell Steward</td>
+                            <td>2 PCS</td>
+                            <td>$7,580</td>
+                            <td>14 Apr,2024</td>
+                            <td> 
+                              <button class="btn button-light-danger txt-danger f-w-500">Canceled</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/10.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">T-shirt</a>
+                                  <p class="c-o-light">#321489</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Darrell Steward</td>
+                            <td>1 PCS</td>
+                            <td>$8,195</td>
+                            <td>09 Mar,2024</td>
+                            <td> 
+                              <button class="btn button-light-info txt-info f-w-500">Pending</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/11.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Sleeper</a>
+                                  <p class="c-o-light">#452140 </p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Courtney Henry</td>
+                            <td>2 PCS</td>
+                            <td>$2,854</td>
+                            <td>16 Jan,2024</td>
+                            <td> 
+                              <button class="btn button-light-success txt-success f-w-500">Delivered</button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td></td>
+                            <td>
+                              <div class="d-flex align-items-center gap-2">
+                                <div class="currency-icon warning"><img class="img-fluid" src="../assets/images/dashboard-2/order/sub-product/14.png" alt=""></div>
+                                <div> <a class="f-14 mb-0 f-w-500 c-light" href="product-details.html">Shoes</a>
+                                  <p class="c-o-light">#844967</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td>Esther Howard</td>
+                            <td>1 PCS</td>
+                            <td>$9,943</td>
+                            <td>21 Feb,2024</td>
+                            <td> 
+                              <button class="btn button-light-warning txt-warning f-w-500">In Progress</button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-3 col-lg-4 col-sm-6 box-col-4 ord-xl-7 ord-md-2 box-ord-7">
+                <div class="card buy-card"><img class="img-fluid" src="../assets/images/dashboard/purchase1.png" alt="vector mens with laptop">
+                  <div class="card-body">
+                    <h6 class="mb-3">Buy <a class="txt-info" href="index.html#!">Pro Account </a>to Explore Premium Features</h6><a class="purchase-btn btn btn-primary btn-hover-effect f-w-500" href="https://1.envato.market/3GVzd" target="_blank">Buy Now</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-5 col-lg-6 ord-xl-9 ord-md-7 box-ord-7 box-col-6">
+                <div class="card sales-report">
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Sales Report</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="salesButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="salesButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body pt-0"> 
+                    <ul class="balance-data"> 
+                      <li><span class="circle bg-primary"></span><span class="c-light ms-1">Orders</span></li>
+                      <li><span class="circle bg-warning"> </span><span class="c-light ms-1">Earnings</span></li>
+                      <li><span class="circle bg-secondary"> </span><span class="c-light ms-1">Refunds</span></li>
+                    </ul>
+                    <div id="sale_report"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-4 col-lg-6 ord-xl-10 ord-md-8 box-ord-7 box-col-6">
+                <div class="card">
+                  <div class="card-header card-no-border">
+                    <div class="header-top"> 
+                      <h5>Manage Appointments</h5>
+                      <div class="card-header-right-icon">
+                        <div class="dropdown icon-dropdown">
+                          <button class="btn dropdown-toggle" id="manageButton" type="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="icon-more-alt"></i></button>
+                          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="manageButton"><a class="dropdown-item" href="index.html#!">Today</a><a class="dropdown-item" href="index.html#!">Tomorrow</a><a class="dropdown-item" href="index.html#!">Yesterday</a></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-body pt-0">
+                    <ul class="appointments-wrapper">
+                      <li class="d-flex align-items-start"><span>12:30</span>
+                        <div class="bg-lighter-primary"></div>
+                        <div class="main-box">
+                          <div class="mb-2"> <span>Participating Meeting</span><span class="c-o-light">There are many variations of passages available</span><span class="txt-primary">2:00 PM - 4:30 PM</span></div>
+                          <div>
+                            <button class="btn btn-primary">General</button>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="d-flex align-items-start"><span>11:30</span>
+                        <div class="bg-lighter-warning"></div>
+                        <div class="main-box">
+                          <div> <span>Customer Support issues</span></div>
+                        </div>
+                      </li>
+                      <li class="d-flex align-items-start"><span>10:25</span>
+                        <div class="bg-lighter-dark"></div>
+                        <div class="main-box">
+                          <div> <span>Read the report</span></div>
+                        </div>
+                      </li>
+                      <li class="d-flex align-items-start"><span>09:00</span>
+                        <div class="bg-lighter-success"></div>
+                        <div class="main-box">
+                          <div> <span>Development issue #26</span></div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Container-fluid Ends-->
+        </div>
+        <!-- footer start-->
+        <footer class="footer">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 footer-copyright text-center">
+                <p class="mb-0">Copyright <span class="year-update"> </span> © Cuba Theme By Pixelstrap  </p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+    <!-- latest jquery-->
+    <script src="{{asset('/assets/js/jquery.min.js')}}"></script>
+    <!-- Bootstrap js-->
+    <script src="{{asset('/assets/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
+    <!-- feather icon js-->
+    <script src="{{asset('/assets/js/icons/feather-icon/feather.min.js')}}"></script>
+    <script src="{{asset('/assets/js/icons/feather-icon/feather-icon.js')}}"></script>
+    <!-- scrollbar js-->
+    <script src="{{asset('/assets/js/scrollbar/simplebar.min.js')}}"></script>
+    <script src="{{asset('/assets/js/scrollbar/custom.js')}}"></script>
+    <!-- Sidebar jquery-->
+    <script src="{{asset('/assets/js/config.js')}}"></script>
+    <!-- Plugins JS start-->
+    <script src="{{asset('/assets/js/sidebar-menu.js')}}"></script>
+    <script src="{{asset('/assets/js/sidebar-pin.js')}}"></script>
+    <script src="{{asset('/assets/js/clock.js')}}"></script>
+    <script src="{{asset('/assets/js/slick/slick.min.js')}}"></script>
+    <script src="{{asset('/assets/js/slick/slick.js')}}"></script>
+    <script src="{{asset('/assets/js/header-slick.js')}}"></script>
+    <script src="{{asset('/assets/js/chart/apex-chart/apex-chart.js')}}"></script>
+    <script src="{{asset('/assets/js/chart/apex-chart/stock-prices.js')}}"></script>
+    <script src="{{asset('/assets/js/counter/counter-custom.js')}}"></script>
+    <script src="{{asset('/assets/js/notify/bootstrap-notify.min.js')}}"></script>
+    <script src="{{asset('/assets/js/dashboard/default.js')}}"></script>
+    <script src="{{asset('/assets/js/notify/index.js')}}"></script>
+    <script src="{{asset('/assets/js/datatable/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('/assets/js/datatable/datatables/dataTables.js')}}"></script>
+    <script src="{{asset('/assets/js/datatable/datatables/dataTables.select.js')}}"></script>
+    <script src="{{asset('/assets/js/datatable/datatables/select.bootstrap5.js')}}"></script>
+    <script src="{{asset('/assets/js/datatable/datatables/datatable.custom.js')}}"></script>
+    <script src="{{asset('/assets/js/typeahead/handlebars.js')}}"></script>
+    <script src="{{asset('/assets/js/typeahead/typeahead.bundle.js')}}"></script>
+    <script src="{{asset('/assets/js/typeahead/typeahead.custom.js')}}"></script>
+    <script src="{{asset('/assets/js/typeahead-search/handlebars.js')}}"></script>
+    <script src="{{asset('/assets/js/typeahead-search/typeahead-custom.js')}}"></script>
+    <!-- Plugins JS Ends-->
+    <!-- Theme js-->
+    <script src="{{asset('/assets/js/script.js')}}"></script>
+    <script src="{{asset('/assets/js/script1.js')}}"></script>
+    <script src="{{asset('/assets/js/theme-customizer/customizer.js')}}"></script>
+  </body>
+</html>

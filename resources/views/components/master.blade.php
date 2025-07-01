@@ -15,6 +15,7 @@
 
 <body>
     <x-base.nav />
+    {{ $content }}
     <footer class="footer">
         <div class="container-fluid">
             <div class="row">
@@ -24,7 +25,7 @@
             </div>
         </div>
     </footer>
-    {{ $content }}
+    
     <x-assets.script />
 </body>
 
