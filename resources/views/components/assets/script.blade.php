@@ -1,23 +1,47 @@
-<script src="{{asset('assets/js/bootstrap/bootstrap.bundle.min.js')}}"></script>
-<script src="{{asset('assets/js/icons/feather-icon/feather.min.js')}}"></script>
-<script src="{{asset('assets/js/icons/feather-icon/feather-icon.js')}}"></script>
-<script src="{{asset('assets/js/scrollbar/simplebar.min.js')}}"></script>
-<script src="{{asset('assets/js/scrollbar/custom.js')}}"></script>
-<script src="{{asset('assets/js/config.js')}}"></script>
-<script src="{{asset('assets/js/sidebar-menu.js')}}"></script>
-<script src="{{asset('assets/js/sidebar-pin.js')}}"></script>
-<script src="{{asset('assets/js/slick/slick.min.js')}}"></script>
-<script src="{{asset('assets/js/slick/slick.js')}}"></script>
-<script src="{{asset('assets/js/header-slick.js')}}"></script>
-<script src="{{asset('assets/js/blockui/custom-blockui1.js')}}"></script>
-<script src="{{asset('assets/js/blockui/custom-freeze1.js')}}"></script>
-<script src="{{asset('assets/js/trash.js')}}"></script>
-<script src="{{asset('assets/js/letter-box/custom-mail-pagination.js')}}"></script>
-<script src="{{asset('assets/js/letter-box/custom-usermail.js')}}"></script>
-<script src="{{asset('assets/js/editors/quill.js')}}"></script>
-<script src="{{asset('assets/js/editors/custom-quill.js')}}"></script>
-<script src="{{asset('assets/js/print.js')}}"></script>
-<script src="{{asset('assets/js/tooltip-init.js')}}"></script>
-<script src="{{asset('assets/js/script.js')}}"></script>
-<script src="{{asset('assets/js/script1.js')}}"></script>
-<script src="{{asset('assets/js/theme-customizer/customizer.js')}}"></script>
+ <!-- latest jquery-->
+ <script src="{{ asset('/assets/js/jquery.min.js') }}"></script>
+ <!-- Bootstrap js-->
+ <script src="{{ asset('/assets/js/bootstrap/bootstrap.bundle.min.js') }}"></script>
+ <!-- feather icon js-->
+ <script src="{{ asset('/assets/js/icons/feather-icon/feather.min.js') }}"></script>
+ <script src="{{ asset('/assets/js/icons/feather-icon/feather-icon.js') }}"></script>
+ <!-- scrollbar js-->
+ <script src="{{ asset('/assets/js/scrollbar/simplebar.min.js') }}"></script>
+ <script src="{{ asset('/assets/js/scrollbar/custom.js') }}"></script>
+ <!-- Sidebar jquery-->
+ <script src="{{ asset('/assets/js/config.js') }}"></script>
+ <!-- Plugins JS start-->
+ <script src="{{ asset('/assets/js/sidebar-menu.js') }}"></script>
+ <script src="{{ asset('/assets/js/sidebar-pin.js') }}"></script>
+ <script src="{{ asset('/assets/js/clock.js') }}"></script>
+ <script src="{{ asset('/assets/js/slick/slick.min.js') }}"></script>
+ <script src="{{ asset('/assets/js/slick/slick.js') }}"></script>
+ <script src="{{ asset('/assets/js/header-slick.js') }}"></script>
+ <script src="{{ asset('/assets/js/chart/apex-chart/apex-chart.js') }}"></script>
+ <script src="{{ asset('/assets/js/chart/apex-chart/stock-prices.js') }}"></script>
+ <script src="{{ asset('/assets/js/counter/counter-custom.js') }}"></script>
+ <script src="{{ asset('/assets/js/notify/bootstrap-notify.min.js') }}"></script>
+ <script src="{{ asset('/assets/js/dashboard/default.js') }}"></script>
+ <script src="{{ asset('/assets/js/notify/index.js') }}"></script>
+ <script src="{{ asset('/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+ <script src="{{ asset('/assets/js/datatable/datatables/dataTables.js') }}"></script>
+ <script src="{{ asset('/assets/js/datatable/datatables/dataTables.select.js') }}"></script>
+ <script src="{{ asset('/assets/js/datatable/datatables/select.bootstrap5.js') }}"></script>
+ <script src="{{ asset('/assets/js/datatable/datatables/datatable.custom.js') }}"></script>
+ <script src="{{ asset('/assets/js/typeahead/handlebars.js') }}"></script>
+ <script src="{{ asset('/assets/js/typeahead/typeahead.bundle.js') }}"></script>
+ <script src="{{ asset('/assets/js/typeahead/typeahead.custom.js') }}"></script>
+ <script src="{{ asset('/assets/js/typeahead-search/handlebars.js') }}"></script>
+ <script src="{{ asset('/assets/js/typeahead-search/typeahead-custom.js') }}"></script>
+ <!-- Plugins JS Ends-->
+ <!-- Theme js-->
+ <script src="{{ asset('/assets/js/script.js') }}"></script>
+ <script src="{{ asset('/assets/js/script1.js') }}"></script>
+ <script src="{{ asset('/assets/js/theme-customizer/customizer.js') }}"></script>
+
+ <!--PARA USAR VUE-->
+    <script src="{{ asset('/src/vue/vue.js') }}"></script>
+    <script src="{{ asset('/src/axios/axios.min.js') }}"></script>
+    <!--LINK DE sweetalert2-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.all.min.js"></script>
+

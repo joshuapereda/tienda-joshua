@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Cliente extends Model
 {
     use HasFactory;
+    //RELACIOANR
+    protected $with = ['Documento']; //WITH = TRAER
+    public function Documento()
+    {
+        return $this->belongsTo(Documento::class);
+    }
 }

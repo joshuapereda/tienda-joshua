@@ -12,7 +12,7 @@ class ClienteController extends Controller
      */
     public function index()
     {
-        //
+        return Cliente::where('estado', true)->get();
     }
 
     /**
@@ -20,7 +20,15 @@ class ClienteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cliente = new Cliente();
+        $cliente->nombre = $request->nombre;
+        $cliente->apellido = $request->apellido;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->tipo_documento = $request->tipo_documento;
+        $cliente->numero_documento = $request->numero_documento;
+        $cliente->save();
+        return $cliente;
     }
 
     /**
@@ -28,7 +36,7 @@ class ClienteController extends Controller
      */
     public function show(Cliente $cliente)
     {
-        //
+        return $cliente;
     }
 
     /**
@@ -36,7 +44,14 @@ class ClienteController extends Controller
      */
     public function update(Request $request, Cliente $cliente)
     {
-        //
+         $cliente->nombre = $request->nombre;
+        $cliente->apellido = $request->apellido;
+        $cliente->telefono = $request->telefono;
+        $cliente->direccion = $request->direccion;
+        $cliente->tipo_documento = $request->tipo_documento;
+        $cliente->numero_documento = $request->numero_documento;
+        $cliente->save();
+        return $cliente;
     }
 
     /**
@@ -44,6 +59,8 @@ class ClienteController extends Controller
      */
     public function destroy(Cliente $cliente)
     {
-        //
+         $cliente->estado = false;
+        $cliente->save();
+        return $cliente;
     }
 }

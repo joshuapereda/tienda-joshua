@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('documentos', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre')->nullable();
+            $table->integer('estado')->default(1);
             $table->timestamps();
         });
     }

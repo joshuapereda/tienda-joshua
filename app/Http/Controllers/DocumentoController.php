@@ -12,7 +12,7 @@ class DocumentoController extends Controller
      */
     public function index()
     {
-        //
+        return Documento::where('estado',true)->get();
     }
 
     /**
@@ -20,7 +20,11 @@ class DocumentoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $documento = new Documento();
+        $documento->nombre = $request->nombre;
+        $documento->save();
+        return $documento;
+
     }
 
     /**
@@ -28,7 +32,7 @@ class DocumentoController extends Controller
      */
     public function show(Documento $documento)
     {
-        //
+        return $documento;
     }
 
     /**
@@ -36,7 +40,9 @@ class DocumentoController extends Controller
      */
     public function update(Request $request, Documento $documento)
     {
-        //
+          $documento->nombre = $request->nombre;
+        $documento->save();
+        return $documento;
     }
 
     /**
@@ -44,6 +50,8 @@ class DocumentoController extends Controller
      */
     public function destroy(Documento $documento)
     {
-        //
+         $documento->estado=false;
+        $documento->save();
+        return $documento;
     }
 }
