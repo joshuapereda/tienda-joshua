@@ -72,15 +72,16 @@
                                   <div class="card-body p-0">
                                     <div class="row list-persons g-3" id="addcon">
                                       <div class="col-xl-4 xl-50 col-md-5">
-                                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical"><a class="contact-tab-0 nav-link active" id="v-pills-org-user-tab" data-bs-toggle="pill" onclick="activeDiv(0)" href="#v-pills-org-user" role="tab" aria-selected="true">
+                                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                          <a v-for="color in colores" class="contact-tab-0 nav-link active" id="v-pills-org-user-tab" data-bs-toggle="pill" onclick="activeDiv(0)" href="#v-pills-org-user" role="tab" aria-selected="true">
                                             <div class="d-flex"><img class="img-50 img-fluid m-r-20 rounded-circle update_img_0" :src="asset('/assets/images/user/2.png')" alt="">
                                               <div class="flex-grow-1">
-                                                <h6> <span class="first_name_0">Joshua </span><span class="last_name_0">Barnes</span></h6>
+                                                <h6> <span class="first_name_0">{{color}} </span><span class="last_name_0">Barnes</span></h6>
                                                 <p class="email_add_0">barnes@gmail.com</p>
                                               </div>
                                             </div></a><a class="contact-tab-1 nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" onclick="activeDiv(1)" href="#v-pills-profile" role="tab" aria-selected="false">
                                             </a>
-                                            </div>
+                                          </div>
                                       </div>
                                       <div class="col-xl-8 xl-50 col-md-7">
                                         <div class="tab-content" id="v-pills-tabContent">
@@ -298,6 +299,7 @@
                      return {
                          clientes: [],
                          documentos: [],
+                         colores:["red","green","blue","yellow"],
                          model: {
                              nombre: '',
                              apellido: '',
